@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import caiinnoLogo from "@/assets/caiinno-logo.png";
 
 const navItems = [
   { label: "Inicio", href: "#" },
@@ -16,21 +17,13 @@ const Header = () => {
 
   return (
     <header className="w-full bg-background">
-      {/* Logo bar */}
-      <div className="flex items-center justify-center py-4 px-6 gap-3">
-        <div className="flex items-center gap-1">
-          {/* Logo circle */}
-          <div className="w-12 h-12 rounded-full border-[3px] border-primary flex items-center justify-center relative">
-            <span className="text-primary font-black text-lg tracking-tight">IN</span>
-          </div>
-          <div className="flex items-baseline gap-0.5">
-            <span className="text-foreground font-extrabold text-2xl tracking-wide">CAI</span>
-            <span className="text-primary font-extrabold text-2xl tracking-wide">INNO</span>
-          </div>
-        </div>
-        <span className="text-primary font-bold text-sm tracking-wide hidden sm:inline">
-          WE THINK BIG, WE WANT CHANGES
-        </span>
+      {/* Logo bar - uses an image so it's easy to swap */}
+      <div className="flex items-center justify-center py-4 px-6">
+        <img
+          src={caiinnoLogo}
+          alt="CAIINNO - Centro de Análisis para la Investigación en Innovación"
+          className="h-14 md:h-16 w-auto object-contain"
+        />
       </div>
 
       {/* Navigation */}
@@ -46,7 +39,6 @@ const Header = () => {
             </a>
           ))}
         </div>
-        {/* Mobile toggle */}
         <div className="md:hidden flex justify-end px-4 py-2">
           <button onClick={() => setMobileOpen(!mobileOpen)} className="text-foreground">
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
