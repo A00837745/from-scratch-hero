@@ -1,6 +1,3 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import heroPyramid from "@/assets/hero-pyramid.jpg";
-
 const heroLinks = [
   "¿QUIÉNES SOMOS?",
   "NUESTRO OBJETIVO",
@@ -9,17 +6,39 @@ const heroLinks = [
   "IMPACTO",
 ];
 
+/**
+ * Hero section with looping background video.
+ * To change the video, replace the `src` of the <source> element
+ * or pass a video URL/import as needed.
+ *
+ * While no video file is provided, a placeholder message is shown.
+ * Replace VIDEO_SRC below with your actual video path, e.g.:
+ *   import heroVideo from "@/assets/hero-video.mp4";
+ *   then set VIDEO_SRC = heroVideo;
+ */
+const VIDEO_SRC: string | null = null; // ← replace with your video import
+
 const HeroSection = () => {
   return (
     <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
-      {/* Background image */}
-      <img
-        src={heroPyramid}
-        alt="Pirámide de Chichén Itzá"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
+      {/* Background video */}
+      {VIDEO_SRC ? (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={VIDEO_SRC} type="video/mp4" />
+        </video>
+      ) : (
+        /* Fallback while no video is set */
+        <div className="absolute inset-0 bg-foreground/90" />
+      )}
+
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[hsl(var(--hero-overlay)/0.35)]" />
+      <div className="absolute inset-0 bg-[hsl(var(--hero-overlay)/0.4)]" />
 
       {/* Content */}
       <div className="relative z-10 flex flex-col justify-center h-full px-8 md:px-16 lg:px-24">
@@ -38,20 +57,6 @@ const HeroSection = () => {
           ))}
         </nav>
       </div>
-
-      {/* Carousel arrows */}
-      <button
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-background/80 flex items-center justify-center hover:bg-background transition-colors shadow"
-        aria-label="Anterior"
-      >
-        <ChevronLeft className="w-5 h-5 text-foreground" />
-      </button>
-      <button
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-background/80 flex items-center justify-center hover:bg-background transition-colors shadow"
-        aria-label="Siguiente"
-      >
-        <ChevronRight className="w-5 h-5 text-foreground" />
-      </button>
     </section>
   );
 };
