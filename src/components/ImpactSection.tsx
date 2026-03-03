@@ -1,81 +1,154 @@
-import impactWorld from "@/assets/impact-world.jpg";
+import { useState } from "react";
+import impactWorld from "@/assets/impact-world.png";
 import impactAwards from "@/assets/impact-awards.jpg";
-import impactInnovation from "@/assets/impact-innovation.jpg";
+import impactInnovation from "@/assets/impact-innovation.png";
 import impactPolicy from "@/assets/impact-policy.jpg";
 
 const impactCards = [
   {
     image: impactWorld,
-    title: "Para mejorar el mundo",
+    title: "PARA MEJORAR EL MUNDO",
     description:
       "Descubre cómo nuestras iniciativas están generando un cambio positivo en la sociedad y el medio ambiente.",
     link: "#",
   },
   {
     image: impactAwards,
-    title: "Premios y reconocimientos",
+    title: "PREMIOS Y RECONOCIMIENTOS",
     description:
       "Conoce los reconocimientos y premios que hemos recibido por nuestro trabajo e impacto en la comunidad.",
     link: "#",
   },
   {
     image: impactInnovation,
-    title: "Innovación colaborativa",
+    title: "INNOVACIÓN JUVENIL",
     description:
-      "Metodologías que reconocen el aporte de la innovación inclusiva en una economía resiliente y sostenible.",
-    link: "#",
-  },
-  {
-    image: impactPolicy,
-    title: "Políticas públicas inclusivas",
-    description:
-      "Articulaciones para impulsar normas que fortalezcan la protección de derechos y el desarrollo social.",
+      "Fomenta la creatividad y el espíritu inventor entre los niños y jóvenes a través de programas de innovación y desarrollo.",
     link: "#",
   },
 ];
 
+// helpers copied from Header to allow uniform style configuration
+const getTextStyles = (styleObj: any) => {
+  const { fontSize, color, ...classStyles } = styleObj;
+  const style: any = {};
+  if (fontSize) style.fontSize = `${fontSize}px`;
+  if (color) style.color = color;
+  return {
+    style,
+    className: Object.values(classStyles).filter(Boolean).join(" "),
+  };
+};
+
+const getImageStyles = (styleObj: any) => {
+  const { width, height } = styleObj;
+  return {
+    style: {
+      ...(width ? { width: `${width}px` } : {}),
+      ...(height ? { height: `${height}px` } : {}),
+    },
+  };
+};
+
+const STYLES = {
+  section: {
+    bgColor: "#ffe2c4",
+    padding: "py-20 px-6 md:px-16 lg:px-24",
+  },
+  heading: {
+    fontSize: 60,
+    fontWeight: "font-black",
+    color: "#0096bb",
+    mb: "mb-3",
+    textCenter: "text-center",
+    underlineWidth: "75%",
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: "font-bold",
+    color: "#ffffff",
+  },
+  description: {
+    fontSize: 20,
+    color: "#555555",
+  },
+  link: {
+    fontSize: 16,
+    fontWeight: "font-semibold",
+    color: "#000000",
+    hoverColor: "#ff8400",
+    transition: "transition-colors",
+  },
+};
+
 const ImpactSection = () => {
+  const [hoveredLink, setHoveredLink] = useState<number | null>(null);
+
   return (
-    <section className="bg-[hsl(var(--impact-bg))] py-20 px-6 md:px-16 lg:px-24">
-      {/* Heading */}
+    <section style={{ backgroundColor: STYLES.section.bgColor }} className={`${STYLES.section.padding}`}>
       <div className="text-center mb-14">
-        <h2 className="text-4xl md:text-5xl font-black italic text-[hsl(var(--impact-heading))] mb-3">
-          IMPACTO
-        </h2>
-        <div className="w-16 h-1 bg-[hsl(var(--impact-heading))] mx-auto rounded-full" />
+        <div className="inline-block">
+          <h2
+            {...getTextStyles({
+              fontSize: STYLES.heading.fontSize,
+              color: STYLES.heading.color,
+            })}
+            className={`${STYLES.heading.fontWeight} ${STYLES.heading.mb} ${STYLES.heading.textCenter} text-4xl md:text-5xl`}
+          >
+            IMPACTO
+          </h2>
+          <div style={{ backgroundColor: STYLES.heading.color, width: STYLES.heading.underlineWidth }} className="h-1 mx-auto rounded-full mt-2" />
+        </div>
       </div>
 
       {/* Cards grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-        {impactCards.map((card) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-16 max-w-8xl mx-auto">
+        {impactCards.map((card, idx) => (
           <div
             key={card.title}
             className="group bg-card rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
           >
             {/* Image */}
-            <div className="relative h-56 overflow-hidden">
+            <div className="relative aspect-[16/10] overflow-hidden">
               <img
                 src={card.image}
                 alt={card.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
-              <h3 className="absolute bottom-4 left-4 right-4 text-primary-foreground font-bold text-lg leading-tight drop-shadow-lg">
+              <h3
+                {...getTextStyles({
+                  fontSize: STYLES.title.fontSize,
+                  color: STYLES.title.color,
+                })}
+                className={`${STYLES.title.fontWeight} text-lg leading-tight drop-shadow-lg absolute bottom-4 left-4 right-4`}
+              >
                 {card.title}
               </h3>
             </div>
 
             {/* Content */}
-            <div className="p-5 flex flex-col gap-4">
-              <p className="text-muted-foreground text-sm leading-relaxed">
+            <div className="p-8 flex flex-col gap-4">
+              <p
+                {...getTextStyles({
+                  fontSize: STYLES.description.fontSize,
+                  color: STYLES.description.color,
+                })}
+                className="leading-relaxed"
+              >
                 {card.description}
               </p>
               <a
                 href={card.link}
-                className="inline-flex items-center gap-1 text-sm font-semibold text-[hsl(var(--impact-heading))] hover:text-[hsl(var(--impact-accent))] transition-colors"
+                {...getTextStyles({
+                  fontSize: STYLES.link.fontSize,
+                  color: hoveredLink === idx ? STYLES.link.hoverColor : STYLES.link.color,
+                })}
+                className={`${STYLES.link.fontWeight} ${STYLES.link.transition} inline-flex items-center gap-1`}
+                onMouseEnter={() => setHoveredLink(idx)}
+                onMouseLeave={() => setHoveredLink(null)}
               >
                 Leer más
-                <span className="text-base">→</span>
               </a>
             </div>
           </div>
