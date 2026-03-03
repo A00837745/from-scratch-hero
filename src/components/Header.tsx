@@ -27,7 +27,7 @@ const getTextStyles = (styleObj: any) => {
   };
 };
 
-// Helper para estilos de imagens que usan dimensiones numéricas
+// Helper para estilos de imagenes que usan dimensiones numéricas
 const getImageStyles = (styleObj: any) => {
   const { width, height } = styleObj;
   return {
@@ -46,10 +46,10 @@ const getImageStyles = (styleObj: any) => {
 const STYLES = {
   // Logo image
   logoImage: {
-    width: 350, // pixels
-    height: 100, // pixels
+    width: 350,
+    height: 100,
   },
-  // Tagline (solo visible en sm+)
+  // Eslogan
   tagline: {
     color: "#00aad4",
     fontWeight: "font-bold",
@@ -93,7 +93,7 @@ const Header = () => {
   return (
     <header className="w-full bg-background">
       {/* Logo bar */}
-      <div className="flex items-center justify-center py-4 px-6 gap-5">
+      <div className="flex items-center justify-center py-5 px-6 gap-8">
           <img
             src={caiinnoLogo}
             alt="Cai Inno logo"
@@ -105,8 +105,8 @@ const Header = () => {
           </span>
         </div>
       {/* Navigation */}
-      <nav className="border-t border-border">
-        <div className="hidden md:flex items-center justify-center gap-8 py-5 px-6">
+      <nav>
+        <div className="hidden md:flex items-center justify-center gap-10 pb-6 px-6">
           {navItems.map((item) => (
             <a
               key={item.label}
