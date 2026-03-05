@@ -1,4 +1,4 @@
-import fondoVideo from "@/assets/fondo.mp4";
+import fondoVideo from "@/assets/fondo-main.mp4";
 
 const heroLinks = [
   "¿QUIÉNES SOMOS?",
@@ -60,13 +60,13 @@ const STYLES = {
   navContainer: {
     display: "flex",
     flexDirection: "flex-col",
-    gap: "gap-3",
+    gap: "gap-8",
   },
 };
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
+    <section className="relative w-full h-[95vh] min-h-[500px] overflow-hidden">
       {/* Background video */}
       {VIDEO_SRC ? (
         <video
@@ -74,12 +74,11 @@ const HeroSection = () => {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover object-center"
         >
           <source src={VIDEO_SRC} type="video/mp4" />
         </video>
       ) : (
-        /* Fallback while no video is set */
         <div className="absolute inset-0 bg-foreground/90" />
       )}
 

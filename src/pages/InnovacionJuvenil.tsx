@@ -10,7 +10,7 @@ const InnovacionJuvenil = () => {
             className="font-black text-4xl md:text-6xl mb-3"
             style={{ color: "#0047ca" }}
           >
-            INNOVACIÓN JUVENIL
+            ¿PORQUÉ NACIÓ EL TALLER?
           </h1>
           <div
             className="h-1 w-20 mx-auto rounded-full mt-2"
