@@ -1,15 +1,16 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import caiinnoLogo from "@/assets/Logo.jpg";
 
 const navItems = [
-  { label: "Inicio", href: "#" },
-  { label: "¿Quiénes somos?", href: "#quienes" },
-  { label: "About us", href: "#about" },
-  { label: "Información Estadística", href: "#info" },
-  { label: "Eventos", href: "#eventos" },
-  { label: "Publicaciones", href: "#publicaciones" },
-  { label: "Impacto", href: "#impacto" },
+  { label: "Inicio", href: "/" },
+  { label: "¿Quiénes somos?", href: "/#quienes" },
+  { label: "About us", href: "/#about" },
+  { label: "Información Estadística", href: "/#info" },
+  { label: "Eventos", href: "/#eventos" },
+  { label: "Publicaciones", href: "/#publicaciones" },
+  { label: "Impacto", href: "/#impacto" },
 ];
 
 /**
