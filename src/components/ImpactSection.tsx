@@ -41,7 +41,7 @@ const impactCards = [
 
 const ImpactSection = () => {
   return (
-    <section className="bg-background py-20 px-6 md:px-16 lg:px-24">
+    <section id="impacto" className="bg-background py-20 px-6 md:px-16 lg:px-24">
       {/* Heading */}
       <div className="text-center mb-14">
         <h2
