@@ -90,6 +90,27 @@ const STYLES = {
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    const isHome = location.pathname === "/";
+    
+    if (href === "/") {
+      navigate("/");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    const hash = href.replace("/#", "#");
+    if (isHome) {
+      const el = document.querySelector(hash);
+      el?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/" + hash);
+    }
+  };
 
   return (
     <header className="w-full bg-background">
@@ -112,8 +133,9 @@ const Header = () => {
             <a
               key={item.label}
               href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)}
               {...getTextStyles(STYLES.navLink)}
-              className={`${STYLES.navLink.hoverColor} ${STYLES.navLink.fontWeight} ${STYLES.navLink.transition} ${STYLES.navLink.underline}`}
+              className={`${STYLES.navLink.hoverColor} ${STYLES.navLink.fontWeight} ${STYLES.navLink.transition} ${STYLES.navLink.underline} cursor-pointer`}
             >
               {item.label}
             </a>
@@ -131,9 +153,9 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
+                onClick={(e) => { handleNavClick(e, item.href); setMobileOpen(false); }}
                 {...getTextStyles(STYLES.mobileLink)}
-                className={`${STYLES.mobileLink.hoverColor} ${STYLES.mobileLink.fontWeight} ${STYLES.mobileLink.transition}`}
-                onClick={() => setMobileOpen(false)}
+                className={`${STYLES.mobileLink.hoverColor} ${STYLES.mobileLink.fontWeight} ${STYLES.mobileLink.transition} cursor-pointer`}
               >
                 {item.label}
               </a>
