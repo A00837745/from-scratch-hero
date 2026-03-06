@@ -1,17 +1,11 @@
 /**
- * =============================================================
- * PÁGINA: Innovación Juvenil
- * =============================================================
- *
- * Esta página muestra 4 tarjetas con videos integrados.
- *
  * ─── CÓMO AGREGAR O CAMBIAR VIDEOS ───
  *
  * 1. Coloca tu archivo de video en la carpeta `src/assets/`
  *    (formatos recomendados: .mp4, .webm)
  *
  * 2. Importa el video al inicio de este archivo:
- *    import miVideo from "@/assets/mi-video.mp4";
+ *    import video# from "@/assets/video.mp4";
  *
  * 3. Reemplaza el valor de `videoSrc` en el array `videoCards`
  *    con la variable importada.
@@ -24,69 +18,79 @@
  *   - description: Texto debajo del video
  *   - videoSrc: Ruta al video (importado como módulo)
  *   - gradientColors: Colores del degradado (separados por coma)
- *   - buttonText: Texto del botón inferior
- *   - buttonLink: URL a la que redirige el botón
+ *   - horizontalImageSrc: Imagen ancha (foto grupal, paisaje, etc.) — opcional
+ *   - horizontalImageText: Texto que aparece bajo la imagen horizontal
+ *   - verticalImageSrc: Imagen vertical (foto de invento, retrato, etc.) — opcional
+ *   - verticalImageText: Texto que aparece bajo la imagen vertical
+ *
+ * Si una tarjeta solo tiene imagen vertical, omite horizontalImageSrc (y viceversa).
  *
  * =============================================================
  */
 
 import Header from "@/components/Header";
 import VideoCard from "@/components/VideoCard";
-
-/**
- * ─── IMPORTAR VIDEOS ───
- * Importa aquí los archivos de video que quieras usar.
- * Ejemplo:
- *   import video1 from "@/assets/video-taller-1.mp4";
- *
- * Por ahora se usa una cadena vacía como placeholder.
- * Cuando importes un video real, reemplaza "" con la variable importada.
- */
-// import video1 from "@/assets/video-taller-1.mp4";
-// import video2 from "@/assets/video-taller-2.mp4";
-// import video3 from "@/assets/video-taller-3.mp4";
-// import video4 from "@/assets/video-taller-4.mp4";
+import video1 from "@/assets/taller-niños.mp4";
+import video2 from "@/assets/taller-mujeres.mp4";
+import video3 from "@/assets/taller-jovenes.mp4";
+import video4 from "@/assets/taller-adultos.mp4";
+import imagen1 from "@/assets/invento-niños.jpg";
+import imagen2 from "@/assets/invento-mujeres.jpg";
+import imagen3 from "@/assets/invento-jovenes.jpg";
+import imagen4 from "@/assets/invento-adultos.jpg";
 
 /**
  * ─── DATOS DE LAS TARJETAS ───
  * Modifica este array para cambiar el contenido de cada tarjeta.
+ *
+ * PARA CAMBIAR LAS IMÁGENES:
+ * - Usa `horizontalImageSrc` para fotos anchas (se muestran recortadas a altura fija).
+ * - Usa `verticalImageSrc` para fotos verticales (se muestran con su proporción original).
+ * - Solo pasa la prop que corresponda — la otra no aparecerá.
+ *
+ * PARA CAMBIAR EL TEXTO BAJO LA IMAGEN:
+ * - Modifica `horizontalImageText` o `verticalImageText` según corresponda.
  */
 const videoCards = [
   {
-    videoSrc: "", // Reemplazar con: video1
-    title: "TÍTULO DEL VIDEO 1",
+    videoSrc: video1,
+    title: "TALLER PARA NIÑOS INVENTORES",
     description:
-      "Aquí va la descripción del primer video. Reemplaza este texto con información sobre el contenido del taller o actividad mostrada.",
-    gradientColors: "#01f0f0, #0047ca", // Degradado cian → azul
-    buttonText: "Saber más",
-    buttonLink: "#",
+      "Según varios autores, incluyendo premios nobel de economía, la mejor acción para aumentar el número de inventores a futuro es trabajando en las infancias.",
+    gradientColors: "#01f0f0, #0047ca",
+    // Imagen vertical (niños en el suelo dibujando)
+    verticalImageSrc: imagen1,
+    verticalImageText: "Invento para extraer agua de un pozo y salvar la vida de una comunidad.",
   },
   {
-    videoSrc: "", // Reemplazar con: video2
-    title: "TÍTULO DEL VIDEO 2",
+    videoSrc: video2,
+    title: "TALLER PARA MUJERES INVENTORAS",
     description:
-      "Aquí va la descripción del segundo video. Explica qué se muestra en este video y por qué es relevante para la innovación juvenil.",
-    gradientColors: "#fffb00, #e08300", // Degradado amarillo → naranja
-    buttonText: "Saber más",
-    buttonLink: "#",
+      "La literatura dice que mostrar a las mujeres que pueden ser inventoras, es clave para que se motiven a serlo.",
+    gradientColors: "#fffb00, #e08300",
+    // Imagen horizontal (foto grupal de mujeres)
+    horizontalImageSrc: imagen2,
+    horizontalImageText: "Invento para purificar agua con materiales reciclables para reducir contaminación en una universidad.",
   },
   {
-    videoSrc: "", // Reemplazar con: video3
-    title: "TÍTULO DEL VIDEO 3",
+    videoSrc: video3,
+    title: "TALLER PARA JOVENES INVENTORES",
     description:
-      "Aquí va la descripción del tercer video. Comparte detalles sobre la experiencia o el proyecto que se presenta.",
-    gradientColors: "#de5bff, #4c00ff", // Degradado morado → violeta
-    buttonText: "Saber más",
-    buttonLink: "#",
+      "A nivel licenciatura es una edad perfecta para convencer a los jóvenes que están listos para inventar.",
+    gradientColors: "#de5bff, #4c00ff",
+    // Imagen vertical (jóvenes con invento)
+    verticalImageSrc: imagen3,
+    verticalImageText: "Invento para calentar agua con materiales reciclables para que la gente viviendo en zonas de pobreza, sin gas, se puedan bañar.",
   },
   {
-    videoSrc: "", // Reemplazar con: video4
-    title: "TÍTULO DEL VIDEO 4",
+    videoSrc: video4,
+    title: "TALLER PARA ADULTOS INVENTORES",
     description:
-      "Aquí va la descripción del cuarto video. Describe el impacto o los resultados del taller o iniciativa presentada.",
-    gradientColors: "#ff5b5b, #ff0066", // Degradado rojo → rosa
-    buttonText: "Saber más",
-    buttonLink: "#",
+      "Árbol que nace torcido, puede enderezarse y volverse inventor. No hay edad para dar un giro en la vida y recuperar la creatividad y el ingenio",
+    gradientColors: "#ff975b, #ff008c",
+    // Imagen vertical (adultos con invento)
+    verticalImageSrc: imagen4,
+    verticalImageText: "Invento para generar electricidad con materiales reciclados para la extracción de agua.",
   },
 ];
 
@@ -108,6 +112,11 @@ const InnovacionJuvenil = () => {
             className="h-1 w-20 mx-auto rounded-full mt-2"
             style={{ backgroundColor: "#0047ca" }}
           />
+          <p className="font-bold text-2xl mt-6"
+          style={{ color: "#00aad4" }}
+          >
+            Porque no existe un programa de formación de inventores.
+          </p>
         </div>
 
         {/* ─── GRID DE TARJETAS CON VIDEO ───
@@ -115,7 +124,7 @@ const InnovacionJuvenil = () => {
           Para cambiar a 3 o 4 columnas, modifica `lg:grid-cols-2` por
           `lg:grid-cols-3` o `lg:grid-cols-4`.
         */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto items-start">
           {videoCards.map((card) => (
             <VideoCard
               key={card.title}
@@ -123,8 +132,10 @@ const InnovacionJuvenil = () => {
               title={card.title}
               description={card.description}
               gradientColors={card.gradientColors}
-              buttonText={card.buttonText}
-              buttonLink={card.buttonLink}
+              horizontalImageSrc={card.horizontalImageSrc}
+              horizontalImageText={card.horizontalImageText}
+              verticalImageSrc={card.verticalImageSrc}
+              verticalImageText={card.verticalImageText}
             />
           ))}
         </div>

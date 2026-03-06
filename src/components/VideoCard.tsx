@@ -35,7 +35,7 @@
  */
 
 import { useRef, useState, useEffect, useCallback } from "react";
-import { Play, Pause, Volume2, VolumeX } from "lucide-react";
+import { Play, Pause, Volume2, VolumeX, Maximize } from "lucide-react";
 
 /**
  * ─── TIPOS DE PROPS ───
@@ -50,10 +50,22 @@ interface VideoCardProps {
   description: string;
   /** Colores del degradado para la barra superior. Ejemplo: "#01f0f0, #0047ca" */
   gradientColors: string;
-  /** Texto del botón inferior (ej: "Saber más") */
-  buttonText: string;
-  /** URL o ruta a la que redirige el botón inferior */
-  buttonLink: string;
+  /**
+   * Imagen horizontal (ej: foto grupal). OPCIONAL.
+   * Si se pasa, se renderiza con altura fija y object-cover.
+   * Para modificar su tamaño, edita las clases en el bloque "IMAGEN HORIZONTAL".
+   */
+  horizontalImageSrc?: string;
+  /** Texto que aparece debajo de la imagen horizontal */
+  horizontalImageText?: string;
+  /**
+   * Imagen vertical (ej: foto de invento). OPCIONAL.
+   * Si se pasa, se renderiza con w-auto y object-contain para no distorsionarse.
+   * Para modificar su tamaño, edita las clases en el bloque "IMAGEN VERTICAL".
+   */
+  verticalImageSrc?: string;
+  /** Texto que aparece debajo de la imagen vertical */
+  verticalImageText?: string;
 }
 
 const VideoCard = ({
@@ -61,8 +73,10 @@ const VideoCard = ({
   title,
   description,
   gradientColors,
-  buttonText,
-  buttonLink,
+  horizontalImageSrc,
+  horizontalImageText,
+  verticalImageSrc,
+  verticalImageText,
 }: VideoCardProps) => {
   /**
    * ─── REFERENCIA AL ELEMENTO VIDEO ───
@@ -162,6 +176,20 @@ const VideoCard = ({
   }, []);
 
   /**
+   * ─── PANTALLA COMPLETA ───
+   * Solicita pantalla completa sobre el elemento <video> directamente.
+   * Usa la API nativa del navegador `requestFullscreen`.
+   */
+  const toggleFullscreen = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    if (video.requestFullscreen) {
+      video.requestFullscreen();
+    }
+  }, []);
+
+  /**
    * ─── FORMATEAR TIEMPO ───
    * Convierte segundos a formato MM:SS para mostrar en la interfaz.
    * Ejemplo: 125 segundos → "02:05"
@@ -216,7 +244,7 @@ const VideoCard = ({
   }, []);
 
   return (
-    <div className="group bg-card rounded-2xl overflow-hidden shadow-lg flex flex-col">
+    <div className="group bg-card rounded-2xl overflow-hidden shadow-lg">
       {/* ─── BARRA SUPERIOR CON DEGRADADO ─── */}
       <div
         className="py-5 px-6 text-center"
@@ -240,14 +268,15 @@ const VideoCard = ({
           {/*
             Elemento <video> nativo de HTML.
             - `ref={videoRef}`: referencia para controlar programáticamente
-            - `preload="metadata"`: carga solo los metadatos (duración, dimensiones)
+            - `preload="none"`: permitir que el navegador maneje la carga de forma óptima
             - NO usamos el atributo `controls` porque tenemos controles personalizados
             - `onClick={togglePlay}`: clic en el video = play/pause
           */}
           <video
             ref={videoRef}
             src={videoSrc}
-            preload="metadata"
+            preload="none"
+            crossOrigin="anonymous"
             className="w-full aspect-video object-cover cursor-pointer"
             onClick={togglePlay}
           />
@@ -312,6 +341,15 @@ const VideoCard = ({
                   className="w-16 h-1 cursor-pointer accent-white"
                   style={{ accentColor: "white" }}
                 />
+
+                {/* Botón pantalla completa */}
+                <button
+                  onClick={toggleFullscreen}
+                  className="text-white hover:text-white/80 transition-colors ml-1"
+                  aria-label="Pantalla completa"
+                >
+                  <Maximize size={18} />
+                </button>
               </div>
             </div>
           </div>
@@ -322,7 +360,7 @@ const VideoCard = ({
           {!isPlaying && (
             <button
               onClick={togglePlay}
-              className="absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity hover:bg-black/40"
+              className="absolute inset-0 flex items-center justify-center bg-black/10 transition-opacity hover:bg-black/20"
               aria-label="Reproducir video"
             >
               <div
@@ -337,22 +375,52 @@ const VideoCard = ({
       </div>
 
       {/* ─── DESCRIPCIÓN ─── */}
-      <div className="px-6 pt-5 pb-4 flex-1">
-        <p className="text-muted-foreground text-lg text-center leading-relaxed">
+      <div className="px-6 pt-5 pb-2 flex-1">
+        <p className="text-muted-foreground text-xl text-center leading-relaxed">
           {description}
         </p>
       </div>
 
-      {/* ─── BOTÓN DE ACCIÓN ─── */}
-      <div className="px-6 pb-8 pt-2 text-center">
-        <a
-          href={buttonLink}
-          className="inline-flex items-center gap-1 text-white font-semibold text-lg px-7 py-3 rounded-xl transition-opacity hover:opacity-80"
-          style={{ background: `linear-gradient(135deg, ${gradientColors})` }}
-        >
-          {buttonText}
-        </a>
-      </div>
+      {/* ─── IMAGEN HORIZONTAL ───
+        Solo se renderiza si se pasa la prop `horizontalImageSrc`.
+        PARA MODIFICAR ESTA IMAGEN INDIVIDUALMENTE:
+        - Altura fija: cambia `h-48` (ej: h-40, h-56, h-64)
+        - `object-cover` rellena el espacio recortando los bordes
+        - Foco: `object-center` → puedes usar object-top, object-bottom
+      */}
+      {horizontalImageSrc && (
+        <div className="px-6 py-4 pb-8 flex flex-col items-center gap-5 w-full">
+          <img
+            src={horizontalImageSrc}
+            alt={horizontalImageText}
+            className="w-full h-full object-cover object-[center_70%] rounded-2xl"
+          />
+          <p className="text-xl text-center text-muted-foreground">
+            {horizontalImageText}
+          </p>
+        </div>
+      )}
+
+      {/* ─── IMAGEN VERTICAL ───
+        Solo se renderiza si se pasa la prop `verticalImageSrc`.
+        PARA MODIFICAR ESTA IMAGEN INDIVIDUALMENTE:
+        - `w-auto` evita que se estire horizontalmente
+        - Ancho máximo: cambia `max-w-xs` (ej: max-w-sm, max-w-md)
+        - Alto máximo: cambia `max-h-80` (ej: max-h-64, max-h-96)
+        - `object-contain` preserva la proporción sin recortar ni estirar
+      */}
+      {verticalImageSrc && (
+        <div className="px-6 py-4 pb-8 flex flex-col items-center gap-5 w-full">
+          <img
+            src={verticalImageSrc}
+            alt={verticalImageText}
+            className="w-auto max-w-xs h-full object-contain rounded-2xl mx-auto"
+          />
+          <p className="text-xl text-center text-muted-foreground">
+            {verticalImageText}
+          </p>
+        </div>
+      )}
     </div>
   );
 };
