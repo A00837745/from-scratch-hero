@@ -28,6 +28,7 @@
  * =============================================================
  */
 
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import VideoCard from "@/components/VideoCard";
 import video1 from "@/assets/taller-niños.mp4";
@@ -95,6 +96,10 @@ const videoCards = [
 ];
 
 const InnovacionJuvenil = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
