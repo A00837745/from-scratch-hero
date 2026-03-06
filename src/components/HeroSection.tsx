@@ -1,11 +1,12 @@
 import fondoVideo from "@/assets/fondo-main.mp4";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const heroLinks = [
-  "¿QUIÉNES SOMOS?",
-  "NUESTRO OBJETIVO",
-  "¿QUÉ PRETENDEMOS?",
-  "¿CÓMO LO HACEMOS?",
-  "IMPACTO",
+  { label: "¿QUIÉNES SOMOS?", href: "#" },
+  { label: "NUESTRO OBJETIVO", href: "#" },
+  { label: "¿QUÉ PRETENDEMOS?", href: "#" },
+  { label: "¿CÓMO LO HACEMOS?", href: "#" },
+  { label: "IMPACTO", href: "#impacto" },
 ];
 
 const VIDEO_SRC: string | null = fondoVideo;
@@ -65,27 +66,31 @@ const STYLES = {
 };
 
 const HeroSection = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleHeroClick = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    if (href === "#") return;
+    const isHome = location.pathname === "/";
+    if (isHome) {
+      const el = document.querySelector(href);
+      el?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/" + href);
+    }
+  };
+
   return (
     <section className="relative w-full h-[95vh] min-h-[500px] overflow-hidden">
-      {/* Background video */}
       {VIDEO_SRC ? (
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover object-center"
-        >
+        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover object-center">
           <source src={VIDEO_SRC} type="video/mp4" />
         </video>
       ) : (
         <div className="absolute inset-0 bg-foreground/90" />
       )}
-
-      {/* Dark overlay */}
       <div className={`absolute inset-0 ${STYLES.overlay.backgroundColor}`} />
-
-      {/* Content */}
       <div className="relative z-10 flex flex-col justify-center h-full px-8 md:px-16 lg:px-24">
         <h1 
           {...getTextStyles(STYLES.title)}
@@ -96,12 +101,13 @@ const HeroSection = () => {
         <nav className={`${STYLES.navContainer.display} ${STYLES.navContainer.flexDirection} ${STYLES.navContainer.gap}`}>
           {heroLinks.map((link) => (
             <a
-              key={link}
-              href="#"
+              key={link.label}
+              href={link.href}
+              onClick={(e) => handleHeroClick(e, link.href)}
               {...getTextStyles(STYLES.link)}
-              className={`${STYLES.link.fontWeight} ${STYLES.link.letterSpacing} ${STYLES.link.hoverEffect} ${STYLES.link.transition} ${STYLES.link.dropShadow} w-fit`}
+              className={`${STYLES.link.fontWeight} ${STYLES.link.letterSpacing} ${STYLES.link.hoverEffect} ${STYLES.link.transition} ${STYLES.link.dropShadow} w-fit cursor-pointer`}
             >
-              {link}
+              {link.label}
             </a>
           ))}
         </nav>
