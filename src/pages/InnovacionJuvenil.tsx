@@ -96,7 +96,7 @@ const videoCards = [
 ];
 
 const InnovacionJuvenil = () => {
-  React.useEffect(() => {
+  useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
