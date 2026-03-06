@@ -1,4 +1,5 @@
 import fondoVideo from "@/assets/fondo-main.mp4";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const heroLinks = [
   "¿QUIÉNES SOMOS?",
