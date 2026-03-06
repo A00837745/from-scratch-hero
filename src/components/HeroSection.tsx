@@ -2,11 +2,11 @@ import fondoVideo from "@/assets/fondo-main.mp4";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const heroLinks = [
-  "¿QUIÉNES SOMOS?",
-  "NUESTRO OBJETIVO",
-  "¿QUÉ PRETENDEMOS?",
-  "¿CÓMO LO HACEMOS?",
-  "IMPACTO",
+  { label: "¿QUIÉNES SOMOS?", href: "#" },
+  { label: "NUESTRO OBJETIVO", href: "#" },
+  { label: "¿QUÉ PRETENDEMOS?", href: "#" },
+  { label: "¿CÓMO LO HACEMOS?", href: "#" },
+  { label: "IMPACTO", href: "#impacto" },
 ];
 
 const VIDEO_SRC: string | null = fondoVideo;
