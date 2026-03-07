@@ -177,7 +177,7 @@ const InnovacionJuvenil = () => {
               key={card.title}
               videoSrc={card.videoSrc}
               title={card.title}
-              description=""
+              description={card.description}
               gradientColors={card.gradientColors}
             />
           ))}
