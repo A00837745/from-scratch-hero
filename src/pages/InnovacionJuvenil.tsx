@@ -105,21 +105,25 @@ const infoBlocks = [
     title: "TÍTULO BLOQUE 1",
     subtitle: "Subtítulo o descripción del bloque 1. Modifica este texto con tu contenido.",
     bgColor: "hsl(200, 60%, 95%)",
+    imageSrc: imagen1,
   },
   {
     title: "TÍTULO BLOQUE 2",
     subtitle: "Subtítulo o descripción del bloque 2. Modifica este texto con tu contenido.",
     bgColor: "hsl(340, 60%, 95%)",
+    imageSrc: imagen2,
   },
   {
     title: "TÍTULO BLOQUE 3",
     subtitle: "Subtítulo o descripción del bloque 3. Modifica este texto con tu contenido.",
     bgColor: "hsl(200, 40%, 92%)",
+    imageSrc: imagen3,
   },
   {
     title: "TÍTULO BLOQUE 4",
     subtitle: "Subtítulo o descripción del bloque 4. Modifica este texto con tu contenido.",
     bgColor: "hsl(0, 0%, 97%)",
+    imageSrc: imagen4,
   },
 ];
 
@@ -156,22 +160,27 @@ const InnovacionJuvenil = () => {
         Cada contenedor tiene color de fondo, título y subtítulo.
         Para agregar imágenes u otro contenido, edita el bloque correspondiente.
       */}
-      <section className="grid grid-cols-1 md:grid-cols-2">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-6">
         {infoBlocks.map((block) => (
           <div
             key={block.title}
-            className="min-h-[320px] md:min-h-[380px] flex flex-col items-center justify-center px-8 py-12 text-center"
+            className="min-h-[320px] md:min-h-[420px] flex flex-col items-center justify-start px-8 py-10 text-center rounded-2xl"
             style={{ backgroundColor: block.bgColor }}
           >
             <h2
-              className="font-black text-2xl md:text-3xl tracking-wide mb-4"
+              className="font-black text-2xl md:text-3xl tracking-wide mb-3"
               style={{ color: "#0047ca" }}
             >
               {block.title}
             </h2>
-            <p className="text-muted-foreground text-base md:text-lg max-w-lg leading-relaxed">
+            <p className="text-muted-foreground text-base md:text-lg max-w-lg leading-relaxed mb-6">
               {block.subtitle}
             </p>
+            <img
+              src={block.imageSrc}
+              alt={block.title}
+              className="max-h-52 w-auto object-contain rounded-xl"
+            />
           </div>
         ))}
       </section>
