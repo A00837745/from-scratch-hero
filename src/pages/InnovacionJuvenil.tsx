@@ -57,21 +57,25 @@ const videoCards = [
     videoSrc: video1,
     title: "TALLER PARA NIÑOS INVENTORES",
     gradientColors: "#01f0f0, #0047ca",
+    description: "Invento para extraer agua de un pozo y salvar la vida de una comunidad.",
   },
   {
     videoSrc: video2,
     title: "TALLER PARA MUJERES INVENTORAS",
     gradientColors: "#fffb00, #e08300",
+    description: "Invento para purificar agua con materiales reciclables para reducir contaminación en una universidad.",
   },
   {
     videoSrc: video3,
     title: "TALLER PARA JOVENES INVENTORES",
     gradientColors: "#de5bff, #4c00ff",
+    description: "Invento para calentar agua con materiales reciclables para que la gente viviendo en zonas de pobreza, sin gas, se puedan bañar.",
   },
   {
     videoSrc: video4,
     title: "TALLER PARA ADULTOS INVENTORES",
     gradientColors: "#ff975b, #ff008c",
+    description: "Invento para generar electricidad con materiales reciclados para la extracción de agua.",
   },
 ];
 
@@ -173,7 +177,7 @@ const InnovacionJuvenil = () => {
               key={card.title}
               videoSrc={card.videoSrc}
               title={card.title}
-              description=""
+              description={card.description}
               gradientColors={card.gradientColors}
             />
           ))}
