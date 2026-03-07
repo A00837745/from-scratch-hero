@@ -56,42 +56,22 @@ const videoCards = [
   {
     videoSrc: video1,
     title: "TALLER PARA NIÑOS INVENTORES",
-    description:
-      "Según varios autores, incluyendo premios nobel de economía, la mejor acción para aumentar el número de inventores a futuro es trabajando en las infancias.",
     gradientColors: "#01f0f0, #0047ca",
-    // Imagen vertical (niños en el suelo dibujando)
-    verticalImageSrc: imagen1,
-    verticalImageText: "Invento para extraer agua de un pozo y salvar la vida de una comunidad.",
   },
   {
     videoSrc: video2,
     title: "TALLER PARA MUJERES INVENTORAS",
-    description:
-      "La literatura dice que mostrar a las mujeres que pueden ser inventoras, es clave para que se motiven a serlo.",
     gradientColors: "#fffb00, #e08300",
-    // Imagen horizontal (foto grupal de mujeres)
-    horizontalImageSrc: imagen2,
-    horizontalImageText: "Invento para purificar agua con materiales reciclables para reducir contaminación en una universidad.",
   },
   {
     videoSrc: video3,
     title: "TALLER PARA JOVENES INVENTORES",
-    description:
-      "A nivel licenciatura es una edad perfecta para convencer a los jóvenes que están listos para inventar.",
     gradientColors: "#de5bff, #4c00ff",
-    // Imagen vertical (jóvenes con invento)
-    verticalImageSrc: imagen3,
-    verticalImageText: "Invento para calentar agua con materiales reciclables para que la gente viviendo en zonas de pobreza, sin gas, se puedan bañar.",
   },
   {
     videoSrc: video4,
     title: "TALLER PARA ADULTOS INVENTORES",
-    description:
-      "Árbol que nace torcido, puede enderezarse y volverse inventor. No hay edad para dar un giro en la vida y recuperar la creatividad y el ingenio",
     gradientColors: "#ff975b, #ff008c",
-    // Imagen vertical (adultos con invento)
-    verticalImageSrc: imagen4,
-    verticalImageText: "Invento para generar electricidad con materiales reciclados para la extracción de agua.",
   },
 ];
 
