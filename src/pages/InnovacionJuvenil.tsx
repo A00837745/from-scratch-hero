@@ -105,21 +105,25 @@ const infoBlocks = [
     title: "TÍTULO BLOQUE 1",
     subtitle: "Subtítulo o descripción del bloque 1. Modifica este texto con tu contenido.",
     bgColor: "hsl(200, 60%, 95%)",
+    imageSrc: imagen1,
   },
   {
     title: "TÍTULO BLOQUE 2",
     subtitle: "Subtítulo o descripción del bloque 2. Modifica este texto con tu contenido.",
     bgColor: "hsl(340, 60%, 95%)",
+    imageSrc: imagen2,
   },
   {
     title: "TÍTULO BLOQUE 3",
     subtitle: "Subtítulo o descripción del bloque 3. Modifica este texto con tu contenido.",
     bgColor: "hsl(200, 40%, 92%)",
+    imageSrc: imagen3,
   },
   {
     title: "TÍTULO BLOQUE 4",
     subtitle: "Subtítulo o descripción del bloque 4. Modifica este texto con tu contenido.",
     bgColor: "hsl(0, 0%, 97%)",
+    imageSrc: imagen4,
   },
 ];
 
