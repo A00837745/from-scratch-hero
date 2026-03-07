@@ -56,42 +56,22 @@ const videoCards = [
   {
     videoSrc: video1,
     title: "TALLER PARA NIÑOS INVENTORES",
-    description:
-      "Según varios autores, incluyendo premios nobel de economía, la mejor acción para aumentar el número de inventores a futuro es trabajando en las infancias.",
     gradientColors: "#01f0f0, #0047ca",
-    // Imagen vertical (niños en el suelo dibujando)
-    verticalImageSrc: imagen1,
-    verticalImageText: "Invento para extraer agua de un pozo y salvar la vida de una comunidad.",
   },
   {
     videoSrc: video2,
     title: "TALLER PARA MUJERES INVENTORAS",
-    description:
-      "La literatura dice que mostrar a las mujeres que pueden ser inventoras, es clave para que se motiven a serlo.",
     gradientColors: "#fffb00, #e08300",
-    // Imagen horizontal (foto grupal de mujeres)
-    horizontalImageSrc: imagen2,
-    horizontalImageText: "Invento para purificar agua con materiales reciclables para reducir contaminación en una universidad.",
   },
   {
     videoSrc: video3,
     title: "TALLER PARA JOVENES INVENTORES",
-    description:
-      "A nivel licenciatura es una edad perfecta para convencer a los jóvenes que están listos para inventar.",
     gradientColors: "#de5bff, #4c00ff",
-    // Imagen vertical (jóvenes con invento)
-    verticalImageSrc: imagen3,
-    verticalImageText: "Invento para calentar agua con materiales reciclables para que la gente viviendo en zonas de pobreza, sin gas, se puedan bañar.",
   },
   {
     videoSrc: video4,
     title: "TALLER PARA ADULTOS INVENTORES",
-    description:
-      "Árbol que nace torcido, puede enderezarse y volverse inventor. No hay edad para dar un giro en la vida y recuperar la creatividad y el ingenio",
     gradientColors: "#ff975b, #ff008c",
-    // Imagen vertical (adultos con invento)
-    verticalImageSrc: imagen4,
-    verticalImageText: "Invento para generar electricidad con materiales reciclados para la extracción de agua.",
   },
 ];
 
@@ -103,25 +83,25 @@ const videoCards = [
 const infoBlocks = [
   {
     title: "TÍTULO BLOQUE 1",
-    subtitle: "Subtítulo o descripción del bloque 1. Modifica este texto con tu contenido.",
+    subtitle: "Según varios autores, incluyendo premios nobel de economía, la mejor acción para aumentar el número de inventores a futuro es trabajando en las infancias.",
     bgColor: "hsl(200, 60%, 95%)",
     imageSrc: imagen1,
   },
   {
     title: "TÍTULO BLOQUE 2",
-    subtitle: "Subtítulo o descripción del bloque 2. Modifica este texto con tu contenido.",
+    subtitle: "La literatura dice que mostrar a las mujeres que pueden ser inventoras, es clave para que se motiven a serlo.",
     bgColor: "hsl(340, 60%, 95%)",
     imageSrc: imagen2,
   },
   {
     title: "TÍTULO BLOQUE 3",
-    subtitle: "Subtítulo o descripción del bloque 3. Modifica este texto con tu contenido.",
+    subtitle: "A nivel licenciatura es una edad perfecta para convencer a los jóvenes que están listos para inventar.",
     bgColor: "hsl(200, 40%, 92%)",
     imageSrc: imagen3,
   },
   {
     title: "TÍTULO BLOQUE 4",
-    subtitle: "Subtítulo o descripción del bloque 4. Modifica este texto con tu contenido.",
+    subtitle: "Árbol que nace torcido, puede enderezarse y volverse inventor. No hay edad para dar un giro en la vida y recuperar la creatividad y el ingenio.",
     bgColor: "hsl(0, 0%, 97%)",
     imageSrc: imagen4,
   },
@@ -193,12 +173,8 @@ const InnovacionJuvenil = () => {
               key={card.title}
               videoSrc={card.videoSrc}
               title={card.title}
-              description={card.description}
+              description=""
               gradientColors={card.gradientColors}
-              horizontalImageSrc={card.horizontalImageSrc}
-              horizontalImageText={card.horizontalImageText}
-              verticalImageSrc={card.verticalImageSrc}
-              verticalImageText={card.verticalImageText}
             />
           ))}
         </div>
