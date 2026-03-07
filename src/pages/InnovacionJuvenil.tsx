@@ -173,12 +173,8 @@ const InnovacionJuvenil = () => {
               key={card.title}
               videoSrc={card.videoSrc}
               title={card.title}
-              description={card.description}
+              description=""
               gradientColors={card.gradientColors}
-              horizontalImageSrc={card.horizontalImageSrc}
-              horizontalImageText={card.horizontalImageText}
-              verticalImageSrc={card.verticalImageSrc}
-              verticalImageText={card.verticalImageText}
             />
           ))}
         </div>
