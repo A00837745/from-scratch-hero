@@ -95,6 +95,34 @@ const videoCards = [
   },
 ];
 
+/**
+ * ─── DATOS DE LOS CONTENEDORES GRANDES ───
+ * Estos 4 bloques aparecen arriba de las tarjetas de video.
+ * Modifica title, subtitle y bgColor para personalizar cada uno.
+ */
+const infoBlocks = [
+  {
+    title: "TÍTULO BLOQUE 1",
+    subtitle: "Subtítulo o descripción del bloque 1. Modifica este texto con tu contenido.",
+    bgColor: "hsl(200, 60%, 95%)",
+  },
+  {
+    title: "TÍTULO BLOQUE 2",
+    subtitle: "Subtítulo o descripción del bloque 2. Modifica este texto con tu contenido.",
+    bgColor: "hsl(340, 60%, 95%)",
+  },
+  {
+    title: "TÍTULO BLOQUE 3",
+    subtitle: "Subtítulo o descripción del bloque 3. Modifica este texto con tu contenido.",
+    bgColor: "hsl(200, 40%, 92%)",
+  },
+  {
+    title: "TÍTULO BLOQUE 4",
+    subtitle: "Subtítulo o descripción del bloque 4. Modifica este texto con tu contenido.",
+    bgColor: "hsl(0, 0%, 97%)",
+  },
+];
+
 const InnovacionJuvenil = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -117,18 +145,39 @@ const InnovacionJuvenil = () => {
             className="h-1 w-20 mx-auto rounded-full mt-2"
             style={{ backgroundColor: "#0047ca" }}
           />
-          <p className="font-bold text-2xl mt-6"
-          style={{ color: "#00aad4" }}
-          >
+          <p className="font-bold text-2xl mt-6" style={{ color: "#00aad4" }}>
             Porque no existe un programa de formación de inventores.
           </p>
         </div>
+      </section>
 
-        {/* ─── GRID DE TARJETAS CON VIDEO ───
-          Se usa un grid de 2 columnas en desktop y 1 en móvil.
-          Para cambiar a 3 o 4 columnas, modifica `lg:grid-cols-2` por
-          `lg:grid-cols-3` o `lg:grid-cols-4`.
-        */}
+      {/* ─── 4 CONTENEDORES GRANDES (GRID 2x2) ───
+        Abarcan todo el ancho de la página.
+        Cada contenedor tiene color de fondo, título y subtítulo.
+        Para agregar imágenes u otro contenido, edita el bloque correspondiente.
+      */}
+      <section className="grid grid-cols-1 md:grid-cols-2">
+        {infoBlocks.map((block) => (
+          <div
+            key={block.title}
+            className="min-h-[320px] md:min-h-[380px] flex flex-col items-center justify-center px-8 py-12 text-center"
+            style={{ backgroundColor: block.bgColor }}
+          >
+            <h2
+              className="font-black text-2xl md:text-3xl tracking-wide mb-4"
+              style={{ color: "#0047ca" }}
+            >
+              {block.title}
+            </h2>
+            <p className="text-muted-foreground text-base md:text-lg max-w-lg leading-relaxed">
+              {block.subtitle}
+            </p>
+          </div>
+        ))}
+      </section>
+
+      {/* ─── GRID DE TARJETAS CON VIDEO ─── */}
+      <section className="py-20 px-6 md:px-16 lg:px-24">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto items-start">
           {videoCards.map((card) => (
             <VideoCard
