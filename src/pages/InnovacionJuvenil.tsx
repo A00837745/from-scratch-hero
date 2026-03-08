@@ -88,25 +88,29 @@ const infoBlocks = [
   {
     title: "TÍTULO BLOQUE 1",
     subtitle: "Según varios autores, incluyendo premios nobel de economía, la mejor acción para aumentar el número de inventores a futuro es trabajando en las infancias.",
-    bgColor: "hsl(200, 60%, 95%)",
+    bgColor: "#d0f7f7",
     imageSrc: imagen1,
+    // objectPosition: controla qué parte de la imagen se muestra cuando se recorta.
+    // Valores útiles: "center" (default), "top", "bottom", "left", "right"
+    objectPosition: "top",
   },
   {
     title: "TÍTULO BLOQUE 2",
     subtitle: "La literatura dice que mostrar a las mujeres que pueden ser inventoras, es clave para que se motiven a serlo.",
-    bgColor: "hsl(340, 60%, 95%)",
+    bgColor: "#fefbd0",
     imageSrc: imagen2,
+    horizontal: true,
   },
   {
     title: "TÍTULO BLOQUE 3",
     subtitle: "A nivel licenciatura es una edad perfecta para convencer a los jóvenes que están listos para inventar.",
-    bgColor: "hsl(200, 40%, 92%)",
+    bgColor: "#eccaff",
     imageSrc: imagen3,
   },
   {
     title: "TÍTULO BLOQUE 4",
     subtitle: "Árbol que nace torcido, puede enderezarse y volverse inventor. No hay edad para dar un giro en la vida y recuperar la creatividad y el ingenio.",
-    bgColor: "hsl(0, 0%, 97%)",
+    bgColor: "#ffcbe8",
     imageSrc: imagen4,
   },
 ];
@@ -148,7 +152,7 @@ const InnovacionJuvenil = () => {
         {infoBlocks.map((block) => (
           <div
             key={block.title}
-            className="min-h-[320px] md:min-h-[420px] flex flex-col items-center justify-start px-8 py-10 text-center rounded-2xl"
+            className="min-h-[320px] md:min-h-[420px] flex flex-col items-center justify-start px-8 pt-10 pb-10 text-center rounded-2xl"
             style={{ backgroundColor: block.bgColor }}
           >
             <h2
@@ -160,13 +164,50 @@ const InnovacionJuvenil = () => {
             <p className="text-muted-foreground text-base md:text-lg max-w-lg leading-relaxed mb-6">
               {block.subtitle}
             </p>
-            <img
-              src={block.imageSrc}
-              alt={block.title}
-              className="max-h-52 w-auto object-contain rounded-xl"
-            />
+            {/*
+              ─── IMAGEN DEL BLOQUE ───
+              Para hacer la imagen MÁS GRANDE:
+                - Imágenes verticales: aumenta `max-h-80` → ej: max-h-96
+                - Imagen horizontal: aumenta `h-52` → ej: h-64, h-72
+                - Ambas: aumenta `max-w-sm` → ej: max-w-md, max-w-lg
+              Para hacer la imagen MÁS PEQUEÑA:
+                - Reduce los valores de alto correspondientes.
+              Las verticales usan `object-contain` para no distorsionarse ni dejar bordes blancos.
+              La horizontal usa `object-cover` con altura fija para llenar su espacio sin vacíos.
+              Para marcar un bloque como horizontal añade `horizontal: true` en su objeto de `infoBlocks`.
+            */}
+            {block.horizontal ? (
+              <img
+                src={block.imageSrc}
+                alt={block.title}
+                className="w-full max-w-sm h-52 object-cover object-center rounded-2xl mt-auto mb-auto"
+              />
+            ) : (
+              <img
+                src={block.imageSrc}
+                alt={block.title}
+                className="w-full max-w-xs max-h-80 object-cover rounded-2xl"
+                style={{ objectPosition: block.objectPosition ?? "center" }}
+              />
+            )}
           </div>
         ))}
+      </section>
+
+            {/* ─── TÍTULO DE LA PÁGINA ─── */}
+      <section className="py-20 px-6 md:px-16 lg:px-24">
+        <div className="text-center mb-16">
+          <h1
+            className="font-black text-4xl md:text-6xl mb-3"
+            style={{ color: "#0047ca" }}
+          >
+            SEA EN PAPEL O EN REALIDAD, LO IMPORTANTE ES QUE AHORA SABEN QUE SON INVENTORES
+          </h1>
+          <div
+            className="h-1 w-20 mx-auto rounded-full mt-2"
+            style={{ backgroundColor: "#0047ca" }}
+          />
+        </div>
       </section>
 
       {/* ─── GRID DE TARJETAS CON VIDEO ─── */}
