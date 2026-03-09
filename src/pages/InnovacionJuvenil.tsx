@@ -250,7 +250,7 @@ const InnovacionJuvenil = () => {
           - Ancho completo: quita la clase max-w-[...] por completo
           - gap-10 → espacio entre tarjetas (gap-6 menos, gap-12 más)
         */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[1100px] mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[1600px] mx-auto items-start">
           {videoCards.map((card) => (
             <VideoCard
               key={card.title}
