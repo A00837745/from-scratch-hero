@@ -29,6 +29,13 @@
  */
 
 import { useEffect } from "react";
+/**
+ * ─── VIDEO DE FONDO (HERO) ───
+ * Para cambiar el video de fondo que se reproduce en bucle al inicio de la página,
+ * reemplaza esta importación con la ruta a tu nuevo video.
+ * Ejemplo: import heroVideo from "@/assets/mi-nuevo-video.mp4";
+ */
+import heroVideo from "@/assets/fondo-main.mp4";
 import Header from "@/components/Header";
 import VideoCard from "@/components/VideoCard";
 import video1 from "@/assets/taller-niños.mp4";
