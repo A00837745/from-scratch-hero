@@ -205,13 +205,13 @@ const InnovacionJuvenil = () => {
               <img
                 src={block.imageSrc}
                 alt={block.title}
-                className="w-full max-w-sm h-52 object-cover object-center rounded-2xl mt-auto mb-auto"
+                className="w-full max-w-md h-64 object-cover object-center rounded-2xl mt-auto mb-auto"
               />
             ) : (
               <img
                 src={block.imageSrc}
                 alt={block.title}
-                className="w-full max-w-xs max-h-80 object-cover rounded-2xl"
+                className="w-full max-w-sm max-h-96 object-cover rounded-2xl"
                 style={{ objectPosition: block.objectPosition ?? "center" }}
               />
             )}
