@@ -240,7 +240,14 @@ const InnovacionJuvenil = () => {
         className="py-20 px-6 md:px-16 lg:px-24 w-full"
         style={{ backgroundColor: "#d0f7f7" }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mx-auto items-start">
+        {/*
+          ─── TAMAÑO DE LAS TARJETAS DE VIDEO ───
+          Para ajustar el tamaño de las tarjetas:
+          - max-w-md → más pequeñas (max-w-sm) o más grandes (max-w-lg, max-w-xl)
+          - gap-10 → espacio entre tarjetas (gap-6 menos, gap-12 más)
+          - Para que ocupen todo el ancho disponible, quita la clase max-w-md
+        */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto items-start">
           {videoCards.map((card) => (
             <VideoCard
               key={card.title}
