@@ -205,7 +205,7 @@ const InnovacionJuvenil = () => {
               <img
                 src={block.imageSrc}
                 alt={block.title}
-                className="w-full max-w-sm h-52 object-cover object-center rounded-2xl mt-auto mb-auto"
+                className="w-full max-w-md h-64 object-cover object-center rounded-2xl mt-auto mb-auto"
               />
             ) : (
               <img
