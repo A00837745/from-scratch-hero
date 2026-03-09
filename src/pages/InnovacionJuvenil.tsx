@@ -131,6 +131,24 @@ const InnovacionJuvenil = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
+      {/* ─── VIDEO DE FONDO (HERO) ───
+        Video en bucle sin sonido que se reproduce automáticamente.
+        Para cambiar el video, modifica la importación `heroVideo` al inicio del archivo.
+        Para ajustar la altura, cambia `h-[60vh]` (ej: h-[50vh], h-[70vh], h-screen).
+      */}
+      <section className="relative w-full h-[60vh] overflow-hidden">
+        <video
+          src={heroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Overlay oscuro opcional — ajusta la opacidad con bg-black/XX */}
+        <div className="absolute inset-0 bg-black/30" />
+      </section>
+
       {/* ─── TÍTULO DE LA PÁGINA ─── */}
       <section className="py-14 px-6 md:px-16 lg:px-24">
         <div className="text-center mb-10">
