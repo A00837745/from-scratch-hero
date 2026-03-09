@@ -29,6 +29,13 @@
  */
 
 import { useEffect } from "react";
+/**
+ * ─── VIDEO DE FONDO (HERO) ───
+ * Para cambiar el video de fondo que se reproduce en bucle al inicio de la página,
+ * reemplaza esta importación con la ruta a tu nuevo video.
+ * Ejemplo: import heroVideo from "@/assets/mi-nuevo-video.mp4";
+ */
+import heroVideo from "@/assets/fondo-main.mp4";
 import Header from "@/components/Header";
 import VideoCard from "@/components/VideoCard";
 import video1 from "@/assets/taller-niños.mp4";
@@ -123,6 +130,24 @@ const InnovacionJuvenil = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+
+      {/* ─── VIDEO DE FONDO (HERO) ───
+        Video en bucle sin sonido que se reproduce automáticamente.
+        Para cambiar el video, modifica la importación `heroVideo` al inicio del archivo.
+        Para ajustar la altura, cambia `h-[60vh]` (ej: h-[50vh], h-[70vh], h-screen).
+      */}
+      <section className="relative w-full h-[60vh] overflow-hidden">
+        <video
+          src={heroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Overlay oscuro opcional — ajusta la opacidad con bg-black/XX */}
+        <div className="absolute inset-0 bg-black/30" />
+      </section>
 
       {/* ─── TÍTULO DE LA PÁGINA ─── */}
       <section className="py-14 px-6 md:px-16 lg:px-24">
