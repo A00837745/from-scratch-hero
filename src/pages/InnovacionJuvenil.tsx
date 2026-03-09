@@ -29,13 +29,7 @@
  */
 
 import { useEffect } from "react";
-/**
- * ─── VIDEO DE FONDO (HERO) ───
- * Para cambiar el video de fondo que se reproduce en bucle al inicio de la página,
- * reemplaza esta importación con la ruta a tu nuevo video.
- * Ejemplo: import heroVideo from "@/assets/mi-nuevo-video.mp4";
- */
-import heroVideo from "@/assets/fondo-main.mp4";
+import heroVideo from "@/assets/video-impacto.mp4";
 import Header from "@/components/Header";
 import VideoCard from "@/components/VideoCard";
 import video1 from "@/assets/taller-niños.mp4";
@@ -104,14 +98,14 @@ const infoBlocks = [
   {
     title: "TALLER PARA MUJERES INVENTORAS",
     subtitle: "La literatura dice que mostrar a las mujeres que pueden ser inventoras, es clave para que se motiven a serlo.",
-    bgColor: "#fefbd0",
+    bgColor: "#fffbc0",
     imageSrc: imagen2,
     horizontal: true,
   },
   {
     title: "TALLER PARA JOVENES INVENTORES",
     subtitle: "A nivel licenciatura es una edad perfecta para convencer a los jóvenes que están listos para inventar.",
-    bgColor: "#eccaff",
+    bgColor: "#ceafe0",
     imageSrc: imagen3,
   },
   {
@@ -136,7 +130,7 @@ const InnovacionJuvenil = () => {
         Para cambiar el video, modifica la importación `heroVideo` al inicio del archivo.
         Para ajustar la altura, cambia `h-[60vh]` (ej: h-[50vh], h-[70vh], h-screen).
       */}
-      <section className="relative w-full h-[60vh] overflow-hidden">
+      <section className="relative w-full h-[80vh] overflow-hidden">
         <video
           src={heroVideo}
           autoPlay
