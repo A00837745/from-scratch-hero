@@ -211,8 +211,11 @@ const InnovacionJuvenil = () => {
       </section>
 
       {/* ─── GRID DE TARJETAS CON VIDEO ─── */}
-      <section className="py-20 px-6 md:px-16 lg:px-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto items-start">
+      <section
+        className="py-20 px-6 md:px-16 lg:px-24 rounded-2xl mx-4 md:mx-10 mb-10"
+        style={{ backgroundColor: "#d0f7f7" }}
+      >
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto items-start">
           {videoCards.map((card) => (
             <VideoCard
               key={card.title}
