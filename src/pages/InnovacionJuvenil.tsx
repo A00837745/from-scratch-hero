@@ -93,7 +93,7 @@ const videoCards = [
  */
 const infoBlocks = [
   {
-    title: "TÍTULO BLOQUE 1",
+    title: "TALLER PARA NIÑOS INVENTORES",
     subtitle: "Según varios autores, incluyendo premios nobel de economía, la mejor acción para aumentar el número de inventores a futuro es trabajando en las infancias.",
     bgColor: "#d0f7f7",
     imageSrc: imagen1,
@@ -102,20 +102,20 @@ const infoBlocks = [
     objectPosition: "top",
   },
   {
-    title: "TÍTULO BLOQUE 2",
+    title: "TALLER PARA MUJERES INVENTORAS",
     subtitle: "La literatura dice que mostrar a las mujeres que pueden ser inventoras, es clave para que se motiven a serlo.",
     bgColor: "#fefbd0",
     imageSrc: imagen2,
     horizontal: true,
   },
   {
-    title: "TÍTULO BLOQUE 3",
+    title: "TALLER PARA JOVENES INVENTORES",
     subtitle: "A nivel licenciatura es una edad perfecta para convencer a los jóvenes que están listos para inventar.",
     bgColor: "#eccaff",
     imageSrc: imagen3,
   },
   {
-    title: "TÍTULO BLOQUE 4",
+    title: "TALLER PARA ADULTOS INVENTORES",
     subtitle: "Árbol que nace torcido, puede enderezarse y volverse inventor. No hay edad para dar un giro en la vida y recuperar la creatividad y el ingenio.",
     bgColor: "#ffcbe8",
     imageSrc: imagen4,
@@ -186,7 +186,7 @@ const InnovacionJuvenil = () => {
             >
               {block.title}
             </h2>
-            <p className="text-muted-foreground text-base md:text-lg max-w-lg leading-relaxed mb-6">
+            <p className="text-muted-foreground text-base md:text-xl max-w-auto leading-relaxed mb-6">
               {block.subtitle}
             </p>
             {/*
@@ -205,7 +205,7 @@ const InnovacionJuvenil = () => {
               <img
                 src={block.imageSrc}
                 alt={block.title}
-                className="w-full max-w-md h-64 object-cover object-center rounded-2xl mt-auto mb-auto"
+                className="w-full max-w-md h-96 object-cover object-center rounded-2xl mt-auto mb-auto"
               />
             ) : (
               <img
