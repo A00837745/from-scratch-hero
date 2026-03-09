@@ -151,7 +151,7 @@ const InnovacionJuvenil = () => {
 
       {/* ─── TÍTULO DE LA PÁGINA ─── */}
       <section className="py-14 px-6 md:px-16 lg:px-24">
-        <div className="text-center mb-10">
+        <div className="text-center">
           <h1
             className="font-black text-4xl md:text-6xl mb-3"
             style={{ color: "#0047ca" }}
