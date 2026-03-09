@@ -125,8 +125,8 @@ const InnovacionJuvenil = () => {
       <Header />
 
       {/* ─── TÍTULO DE LA PÁGINA ─── */}
-      <section className="py-20 px-6 md:px-16 lg:px-24">
-        <div className="text-center mb-16">
+      <section className="py-14 px-6 md:px-16 lg:px-24">
+        <div className="text-center mb-10">
           <h1
             className="font-black text-4xl md:text-6xl mb-3"
             style={{ color: "#0047ca" }}
