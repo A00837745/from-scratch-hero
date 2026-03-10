@@ -71,13 +71,7 @@ const videoCards = [
     title: "TALLER PARA JOVENES INVENTORES",
     gradientColors: "#de5bff, #4c00ff",
     description: "Invento para calentar agua con materiales reciclables para que la gente viviendo en zonas de pobreza, sin gas, se puedan bañar.",
-  },
-  {
-    videoSrc: video4,
-    title: "TALLER PARA ADULTOS INVENTORES",
-    gradientColors: "#ff975b, #ff008c",
-    description: "Invento para generar electricidad con materiales reciclados para la extracción de agua.",
-  },
+  }
 ];
 
 /**
@@ -244,7 +238,7 @@ const InnovacionJuvenil = () => {
           - Ancho completo: quita la clase max-w-[...] por completo
           - gap-10 → espacio entre tarjetas (gap-6 menos, gap-12 más)
         */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-[1600px] mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-[1800px] mx-auto items-start">
           {videoCards.map((card) => (
             <VideoCard
               key={card.title}
