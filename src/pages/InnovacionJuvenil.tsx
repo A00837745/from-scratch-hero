@@ -207,27 +207,29 @@ const InnovacionJuvenil = () => {
         ))}
       </section>
 
-            {/* ─── TÍTULO DE LA PÁGINA ─── */}
-      <section className="py-12 px-6 md:px-16 lg:px-24">
-        <div className="text-center">
-          <h1
+      {/* ─── Espacio separador entre sección de fotos y sección de videos ─── */}
+      <div className="py-8" />
+
+      {/* ─── GRID DE TARJETAS CON VIDEO ───
+        El título ahora está dentro de la sección con fondo azul.
+      */}
+      <section
+        className="py-20 px-6 md:px-16 lg:px-24 w-full"
+        style={{ backgroundColor: "#d0f7f7" }}
+      >
+        {/* ─── TÍTULO DE LA SECCIÓN DE VIDEOS ─── */}
+        <div className="text-center mb-16">
+          <h2
             className="font-black text-4xl md:text-6xl mb-3"
             style={{ color: "#0047ca" }}
           >
             SEA EN PAPEL O EN REALIDAD, LO IMPORTANTE ES QUE AHORA SABEN QUE SON INVENTORES
-          </h1>
+          </h2>
           <div
             className="h-1 w-20 mx-auto rounded-full mt-2"
             style={{ backgroundColor: "#0047ca" }}
           />
         </div>
-      </section>
-
-      {/* ─── GRID DE TARJETAS CON VIDEO ─── */}
-      <section
-        className="py-20 px-6 md:px-16 lg:px-24 w-full"
-        style={{ backgroundColor: "#d0f7f7" }}
-      >
         {/*
           ─── TAMAÑO DE LAS TARJETAS DE VIDEO ───
           Se usa un valor personalizado con max-w-[Xpx] para control preciso.
