@@ -227,24 +227,8 @@ const InnovacionJuvenil = () => {
         </div>
         {/*
           ─── TAMAÑO DE LAS TARJETAS DE VIDEO ───
-          Se usa un valor personalizado con max-w-[Xpx] para control preciso.
-          Ajusta el número de píxeles según prefieras:
-          - Más pequeñas: max-w-[900px], max-w-[850px]
-          - Tamaño actual: max-w-[1100px]
-          - Más grandes: max-w-[1200px], max-w-[1300px]
-          - Ancho completo: quita la clase max-w-[...] por completo
-          - gap-10 → espacio entre tarjetas (gap-6 menos, gap-12 más)
         */}
-        {/*
-          ─── TAMAÑO DE LAS TARJETAS DE VIDEO ───
-          Para hacer las tarjetas más grandes o pequeñas, modifica `max-w-[1400px]`:
-            - Más pequeñas: max-w-[1000px], max-w-[1200px]
-            - Más grandes: max-w-[1600px], max-w-[1800px], max-w-[2000px]
-          También puedes ajustar el espacio entre tarjetas con `gap-8`:
-            - Menos espacio: gap-4, gap-6
-            - Más espacio: gap-10, gap-12
-        */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[1400px] mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-[1600px] mx-auto items-start">
           {videoCards.map((card) => (
             <VideoCard
               key={card.title}
