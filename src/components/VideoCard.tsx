@@ -277,7 +277,7 @@ const VideoCard = ({
             src={videoSrc}
             preload="none"
             crossOrigin="anonymous"
-            className="w-full aspect-video object-cover cursor-pointer"
+            className="w-full aspect-[9/16] object-cover cursor-pointer"
             onClick={togglePlay}
           />
 
