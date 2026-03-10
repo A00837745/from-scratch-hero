@@ -45,14 +45,12 @@ const ImpactSection = () => {
       {/* Heading */}
       <div className="text-center mb-20">
         <h2
-          className="font-black text-6xl md:text-7xl mb-3"
-          style={{ color: "#0047ca" }}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
         >
           IMPACTO
         </h2>
         <div
-          className="h-1 w-20 mx-auto rounded-full mt-2"
-          style={{ backgroundColor: "#0047ca" }}
+          className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"
         />
       </div>
 
@@ -68,7 +66,7 @@ const ImpactSection = () => {
               className="py-6 px-6 text-center"
               style={{ background: card.gradient }}
             >
-              <h3 className="text-white font-bold text-2xl md:text-3xl tracking-wide">
+              <h3 className="text-white font-bold text-2xl sm:text-3xl md:text-4xl text-center">
                 {card.title}
               </h3>
             </div>
