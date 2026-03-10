@@ -250,7 +250,7 @@ const VideoCard = ({
         className="py-5 px-6 text-center"
         style={{ background: `linear-gradient(135deg, ${gradientColors})` }}
       >
-        <h3 className="text-white font-bold text-2xl md:text-3xl tracking-wide">
+        <h3 className="text-white font-bold text-2xl md:text-3xl tracking-wide mt-2 pb-1">
           {title}
         </h3>
       </div>

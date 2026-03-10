@@ -35,7 +35,6 @@ import VideoCard from "@/components/VideoCard";
 import video1 from "@/assets/taller-niños.mp4";
 import video2 from "@/assets/taller-mujeres.mp4";
 import video3 from "@/assets/taller-jovenes.mp4";
-import video4 from "@/assets/taller-adultos.mp4";
 import imagen1 from "@/assets/invento-niños.jpg";
 import imagen2 from "@/assets/invento-mujeres.jpg";
 import imagen3 from "@/assets/invento-jovenes.jpg";
@@ -141,16 +140,14 @@ const InnovacionJuvenil = () => {
       <section className="py-14 px-6 md:px-16 lg:px-24">
         <div className="text-center">
           <h1
-            className="font-black text-4xl md:text-6xl mb-3"
-            style={{ color: "#0047ca" }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
           >
             ¿PORQUÉ NACIÓ EL TALLER?
           </h1>
           <div
-            className="h-1 w-20 mx-auto rounded-full mt-2"
-            style={{ backgroundColor: "#0047ca" }}
+            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"
           />
-          <p className="font-bold text-2xl mt-6" style={{ color: "#00aad4" }}>
+          <p className="font-bold sm:text-2xl text-xl md:text-3xl lg:text-4xl mt-6" style={{ color: "#00aad4" }}>
             Porque no existe un programa de formación de inventores.
           </p>
         </div>
@@ -220,14 +217,12 @@ const InnovacionJuvenil = () => {
         {/* ─── TÍTULO DE LA SECCIÓN DE VIDEOS ─── */}
         <div className="text-center mb-16">
           <h2
-            className="font-black text-4xl md:text-6xl mb-3"
-            style={{ color: "#0047ca" }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
           >
             SEA EN PAPEL O EN REALIDAD, LO IMPORTANTE ES QUE AHORA SABEN QUE SON INVENTORES
           </h2>
           <div
-            className="h-1 w-20 mx-auto rounded-full mt-2"
-            style={{ backgroundColor: "#0047ca" }}
+            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"
           />
         </div>
         {/*
@@ -240,7 +235,7 @@ const InnovacionJuvenil = () => {
           - Ancho completo: quita la clase max-w-[...] por completo
           - gap-10 → espacio entre tarjetas (gap-6 menos, gap-12 más)
         */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-[1800px] mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-[2000px] mx-auto items-start">
           {videoCards.map((card) => (
             <VideoCard
               key={card.title}
