@@ -145,15 +145,20 @@ const InnovacionJuvenil = () => {
         className="py-20 px-6 md:px-16 lg:px-24"
         style={{ background: "linear-gradient(to right, #C2FFFF, #fff3c2, #ead5ff)" }}
       >
-        <div className="text-center mb-20">
+        <div className="flex justify-center mb-16">
+        <div className="text-center py-8 px-20 rounded-2xl" style={{ backgroundColor: "#C2FFFF" }}>
           <h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
           >
-            ¿QUÉ TALLERES HEMOS IMPLEMENTADO?
+            ¿PORQUÉ NACIÓ ESTE TALLER?
           </h1>
           <div
-            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"
+            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full mb-4"
           />
+          <p className="text-xl md:text-2xl font-semibold mt-2" style={{ color: "#0047ca" }}>
+            PORQUE NO EXISTE UN PROGRAMA OFICIAL DE FORMACIÓN DE INVENTORAS E INVENTORES
+          </p>
+        </div>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-40 max-w-8xl mx-auto">
           {/* Columna 1 — edita el texto directamente aquí */}
@@ -181,9 +186,19 @@ const InnovacionJuvenil = () => {
         Para agregar imágenes u otro contenido, edita el bloque correspondiente.
       */}
       <section 
-        className="grid grid-cols-1 md:grid-cols-2 gap-4 py-20 px-6 md:px-16 lg:px-24 w-full"
+        className="flex flex-col py-20 px-6 md:px-16 lg:px-24 w-full"
         style={{ backgroundColor: "#E0FFFF" }}
       >
+        {/* ─── TÍTULO DE LA SECCIÓN DE FOTOS — mismo formato, sin contenedor */}
+        <div className="text-center mb-16">
+          <h2
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
+          >
+            TALLERES QUE IMPLEMENTAMOS
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full" />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
         {infoBlocks.map((block) => (
           <div
             key={block.title}
@@ -227,9 +242,8 @@ const InnovacionJuvenil = () => {
             )}
           </div>
         ))}
+        </div>
       </section>
-
-   
 
       {/* ─── GRID DE TARJETAS CON VIDEO ───
         El título ahora está dentro de la sección con fondo azul.
