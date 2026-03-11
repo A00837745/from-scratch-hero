@@ -68,7 +68,7 @@ const videoCards = [
   {
     videoSrc: video3,
     title: "TALLER PARA JOVENES INVENTORES",
-    gradientColors: "#de5bff, #4c00ff",
+    gradientColors: "#E000CD, #4c00ff",
     description: "Invento para calentar agua con materiales reciclables para que la gente viviendo en zonas de pobreza, sin gas, se puedan bañar.",
   }
 ];
@@ -82,7 +82,7 @@ const infoBlocks = [
   {
     title: "TALLER PARA NIÑOS INVENTORES",
     subtitle: "Según varios autores, incluyendo premios nobel de economía, la mejor acción para aumentar el número de inventores a futuro es trabajando en las infancias.",
-    bgColor: "#d0f7f7",
+    bgColor: "#C2FFFF",
     imageSrc: imagen1,
     // objectPosition: controla qué parte de la imagen se muestra cuando se recorta.
     // Valores útiles: "center" (default), "top", "bottom", "left", "right"
@@ -136,20 +136,42 @@ const InnovacionJuvenil = () => {
         <div className="absolute inset-0 bg-black/30" />
       </section>
 
-      {/* ─── TÍTULO DE LA PÁGINA ─── */}
-      <section className="py-14 px-6 md:px-16 lg:px-24">
-        <div className="text-center">
+      {/* ─── TÍTULO + 3 TEXTOS ───
+        Sección propia con fondo pastel verde menta.
+        Para cambiar los 3 textos, edítalos directamente aquí.
+        Para cambiar el color de fondo, modifica el backgroundColor.
+      */}
+      <section
+        className="py-20 px-6 md:px-16 lg:px-24"
+        style={{ background: "linear-gradient(to right, #C2FFFF, #fff3c2, #ead5ff)" }}
+      >
+        <div className="text-center mb-20">
           <h1
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
           >
-            ¿PORQUÉ NACIÓ EL TALLER?
+            ¿QUÉ TALLERES HEMOS IMPLEMENTADO?
           </h1>
           <div
             className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"
           />
-          <p className="font-bold sm:text-2xl text-xl md:text-3xl lg:text-4xl mt-6" style={{ color: "#00aad4" }}>
-            Porque no existe un programa de formación de inventores.
-          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-40 max-w-8xl mx-auto">
+          {/* Columna 1 — edita el texto directamente aquí */}
+          <div className="text-center text-xl md:text-2xl leading-relaxed space-y-4">
+            <p>En muchas escuelas de México, América Latina y el Caribe, existen pocas actividades que enseñen a las niñas y niños a pensar como inventores: a observar problemas, buscar soluciones y atreverse a crear algo nuevo.</p>
+            <p>Esto, a pesar de que estas habilidades pueden cambiar su futuro y el de los países.</p>
+          </div>
+          {/* Columna 2 — edita el texto directamente aquí */}
+          <div className="text-center text-xl md:text-2xl leading-relaxed space-y-4">
+            <p>Países desarrollados tienen más inventoras e inventores y más patentes por muchas razones. Una de ellas es que desde pequeños escuchan que ellos pueden crear o inventar algo que cambie su vida o la de los demás.</p>
+            <p>Por ejemplo, como dijo el economista Alfred Marshall, "los jóvenes norteamericanos capaces saben que podrían volverse inventores, o pasar de ser barberos a capitanes de guerra, tal como sucedió con los florentinos en la edad media”, es decir, que podían soñar en grande.</p>
+          </div>
+          {/* Columna 3 — edita el texto directamente aquí */}
+          <div className="text-center text-xl md:text-2xl leading-relaxed space-y-4">
+            <p>Nuestros jóvenes, niñas y niños también merecen creer en sus sueños. Y esa confianza empieza en la infancia, en la escuela y en la familia. Este taller busca despertar esa chispa.</p>
+            <p>El taller también se enfoca en jóvenes universitarios, porque en esa etapa toman decisiones que determinan su futuro profesional.</p>
+            <p>Creamos otro taller para adultos, el cual busca sensibilizarlos y hacerles recordar que sigue dentro de ellos una niña o un niño con creatividad, curiosidad y capacidad de inventar soluciones. Esto pretende que les despierte el interés por formar niñas o niños inventores en su círculo cercano, por ejemplo, hijas o hijos.</p>
+          </div>
         </div>
       </section>
 
@@ -158,7 +180,10 @@ const InnovacionJuvenil = () => {
         Cada contenedor tiene color de fondo, título y subtítulo.
         Para agregar imágenes u otro contenido, edita el bloque correspondiente.
       */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-4 px-4 md:px-6">
+      <section 
+        className="grid grid-cols-1 md:grid-cols-2 gap-4 py-20 px-6 md:px-16 lg:px-24 w-full"
+        style={{ backgroundColor: "#E0FFFF" }}
+      >
         {infoBlocks.map((block) => (
           <div
             key={block.title}
@@ -166,12 +191,12 @@ const InnovacionJuvenil = () => {
             style={{ backgroundColor: block.bgColor }}
           >
             <h2
-              className="font-black text-2xl md:text-3xl tracking-wide mb-3"
+              className="font-black text-3xl md:text-4xl tracking-wide mb-3"
               style={{ color: "#0047ca" }}
             >
               {block.title}
             </h2>
-            <p className="text-muted-foreground text-base md:text-xl max-w-auto leading-relaxed mb-6">
+            <p className="text-muted-foreground text-xl md:text-2xl max-w-auto leading-relaxed mb-6">
               {block.subtitle}
             </p>
             {/*
@@ -204,22 +229,21 @@ const InnovacionJuvenil = () => {
         ))}
       </section>
 
-      {/* ─── Espacio separador entre sección de fotos y sección de videos ─── */}
-      <div className="py-8" />
+   
 
       {/* ─── GRID DE TARJETAS CON VIDEO ───
         El título ahora está dentro de la sección con fondo azul.
       */}
       <section
         className="py-20 px-6 md:px-16 lg:px-24 w-full"
-        style={{ backgroundColor: "#d0f7f7" }}
+        style={{ backgroundColor: "#C2FFFF" }}
       >
         {/* ─── TÍTULO DE LA SECCIÓN DE VIDEOS ─── */}
         <div className="text-center mb-16">
           <h2
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
           >
-            SEA EN PAPEL O EN REALIDAD, LO IMPORTANTE ES QUE AHORA SABEN QUE SON INVENTORES
+            AHORA SABEN QUE SON INVENTORAS E INVENTORES
           </h2>
           <div
             className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"
