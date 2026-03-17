@@ -124,7 +124,7 @@ const InnovacionJuvenil = () => {
         Para cambiar el video, modifica la importación `heroVideo` al inicio del archivo.
         Para ajustar la altura, cambia `h-[60vh]` (ej: h-[50vh], h-[70vh], h-screen).
       */}
-      <section className="relative w-full h-[80vh] overflow-hidden">
+      <section className="relative w-full h-screen overflow-hidden">
         <video
           src={heroVideo}
           autoPlay
@@ -143,7 +143,7 @@ const InnovacionJuvenil = () => {
         Para cambiar textos, edita title y description.
       */}
       <section
-        className="py-20 px-6 md:px-16 lg:px-24"
+        className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20"
         style={{ backgroundColor: "#d4e8dc" }}
       >
         <div className="text-center mb-16">
@@ -189,7 +189,7 @@ const InnovacionJuvenil = () => {
         Para cambiar colores del degradado, modifica los valores de gradiente.
       */}
       <section
-        className="py-20 px-6 md:px-16 lg:px-24 w-full"
+        className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20 w-full"
         style={{ backgroundColor: "#c8e4f0" }}
       >
         <div className="text-center mb-16">
@@ -207,7 +207,7 @@ const InnovacionJuvenil = () => {
           {infoBlocks.map((block) => (
             <div
               key={block.title}
-              className="relative rounded-2xl overflow-hidden min-h-[300px] md:min-h-[380px] flex flex-col justify-between"
+              className="relative rounded-2xl overflow-hidden min-h-[340px] md:min-h-[420px] lg:min-h-[480px] flex flex-col justify-between"
             >
               {/* Imagen de fondo */}
               <img
@@ -249,7 +249,7 @@ const InnovacionJuvenil = () => {
         El título ahora está dentro de la sección con fondo azul.
       */}
       <section
-        className="py-20 px-6 md:px-16 lg:px-24 w-full"
+        className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20 w-full"
         style={{ backgroundColor: "#C2FFFF" }}
       >
         {/* ─── TÍTULO DE LA SECCIÓN DE VIDEOS ─── */}
