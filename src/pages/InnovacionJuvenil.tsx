@@ -189,7 +189,7 @@ const InnovacionJuvenil = () => {
         Para cambiar colores del degradado, modifica los valores de gradiente.
       */}
       <section
-        className="py-20 px-6 md:px-16 lg:px-24 w-full"
+        className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20 w-full"
         style={{ backgroundColor: "#c8e4f0" }}
       >
         <div className="text-center mb-16">
