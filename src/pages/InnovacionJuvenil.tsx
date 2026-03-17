@@ -143,16 +143,16 @@ const InnovacionJuvenil = () => {
       */}
       <section
         className="py-20 px-6 md:px-16 lg:px-24"
-        style={{ background: "linear-gradient(to right, #C2FFFF, #fff3c2, #ead5ff)" }}
+        style={{ backgroundColor: "#e8e0f0" }}
       >
         <h2
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-12"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-12 text-center"
           style={{ color: "#3730a3" }}
         >
           ¿Qué talleres hemos<br />implementado?
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {/* Card 1 — EL PANORAMA */}
           <div className="rounded-2xl p-8 flex flex-col justify-start" style={{ backgroundColor: "#b8c45a" }}>
             <h3 className="text-white font-black text-2xl md:text-3xl tracking-wide mb-4">EL PANORAMA</h3>
