@@ -185,16 +185,16 @@ const InnovacionJuvenil = () => {
       */}
       <section
         className="py-20 px-6 md:px-16 lg:px-24 w-full"
-        style={{ backgroundColor: "#E0FFFF" }}
+        style={{ backgroundColor: "#f5f5f5" }}
       >
         <h2
-          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-12"
+          className="text-4xl sm:text-5xl md:text-6xl font-bold mb-12 text-center"
           style={{ color: "#3730a3" }}
         >
           Nuestros talleres
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
           {infoBlocks.map((block) => (
             <div
               key={block.title}
@@ -207,17 +207,22 @@ const InnovacionJuvenil = () => {
                 className="absolute inset-0 w-full h-full object-cover"
                 style={{ objectPosition: block.objectPosition ?? "center" }}
               />
-              {/* Overlay oscuro para legibilidad */}
-              <div className="absolute inset-0 bg-black/40" />
+              {/* Overlay con color difuminado único por tarjeta */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: `linear-gradient(to top, ${block.bgColor}dd 0%, ${block.bgColor}88 40%, transparent 70%)`,
+                }}
+              />
               {/* Texto superpuesto */}
               <div className="relative z-10 p-6 md:p-8">
-                <h3 className="text-white font-black text-xl md:text-2xl mb-1">
+                <h3 className="text-white font-black text-xl md:text-2xl mb-1 drop-shadow-lg">
                   Taller para
                 </h3>
-                <h3 className="font-black text-2xl md:text-3xl mb-3" style={{ color: block.bgColor }}>
+                <h3 className="font-black text-2xl md:text-3xl mb-3 drop-shadow-lg" style={{ color: block.bgColor }}>
                   {block.title.replace("TALLER PARA ", "").toLowerCase()}
                 </h3>
-                <p className="text-white text-sm md:text-base leading-relaxed max-w-md">
+                <p className="text-white text-sm md:text-base leading-relaxed max-w-md drop-shadow-md">
                   {block.subtitle}
                 </p>
               </div>
