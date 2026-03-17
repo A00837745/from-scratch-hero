@@ -143,7 +143,7 @@ const InnovacionJuvenil = () => {
         Para cambiar textos, edita title y description.
       */}
       <section
-        className="py-20 px-6 md:px-16 lg:px-24"
+        className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20"
         style={{ backgroundColor: "#d4e8dc" }}
       >
         <div className="text-center mb-16">
