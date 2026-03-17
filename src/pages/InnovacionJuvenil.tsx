@@ -82,29 +82,30 @@ const infoBlocks = [
   {
     title: "TALLER PARA NIÑOS INVENTORES",
     subtitle: "Según varios autores, incluyendo premios nobel de economía, la mejor acción para aumentar el número de inventores a futuro es trabajando en las infancias.",
-    bgColor: "#C2FFFF",
+    overlayColor: "#C2FFFF",
+    titleColor: "#00bcd4",
     imageSrc: imagen1,
-    // objectPosition: controla qué parte de la imagen se muestra cuando se recorta.
-    // Valores útiles: "center" (default), "top", "bottom", "left", "right"
     objectPosition: "top",
   },
   {
     title: "TALLER PARA MUJERES INVENTORAS",
     subtitle: "La literatura dice que mostrar a las mujeres que pueden ser inventoras, es clave para que se motiven a serlo.",
-    bgColor: "#fffbc0",
+    overlayColor: "#e8c8f0",
+    titleColor: "#c060d0",
     imageSrc: imagen2,
-    horizontal: true,
   },
   {
     title: "TALLER PARA JOVENES INVENTORES",
     subtitle: "A nivel licenciatura es una edad perfecta para convencer a los jóvenes que están listos para inventar.",
-    bgColor: "#ceafe0",
+    overlayColor: "#f5d0a0",
+    titleColor: "#e08300",
     imageSrc: imagen3,
   },
   {
     title: "TALLER PARA ADULTOS INVENTORES",
     subtitle: "Árbol que nace torcido, puede enderezarse y volverse inventor. No hay edad para dar un giro en la vida y recuperar la creatividad y el ingenio.",
-    bgColor: "#ffcbe8",
+    overlayColor: "#f0c0d8",
+    titleColor: "#e06090",
     imageSrc: imagen4,
   },
 ];
