@@ -212,7 +212,7 @@ const InnovacionJuvenil = () => {
               <div
                 className="absolute inset-0"
                 style={{
-                  background: `linear-gradient(to top, ${block.bgColor}dd 0%, ${block.bgColor}88 40%, transparent 70%)`,
+                  background: `linear-gradient(to top, ${block.overlayColor}dd 0%, ${block.overlayColor}88 40%, transparent 70%)`,
                 }}
               />
               {/* Texto superpuesto */}
@@ -220,7 +220,7 @@ const InnovacionJuvenil = () => {
                 <h3 className="text-white font-black text-xl md:text-2xl mb-1 drop-shadow-lg">
                   Taller para
                 </h3>
-                <h3 className="font-black text-2xl md:text-3xl mb-3 drop-shadow-lg" style={{ color: block.bgColor }}>
+                <h3 className="font-black text-2xl md:text-3xl mb-3 drop-shadow-lg" style={{ color: block.titleColor }}>
                   {block.title.replace("TALLER PARA ", "").toLowerCase()}
                 </h3>
                 <p className="text-white text-sm md:text-base leading-relaxed max-w-md drop-shadow-md">
