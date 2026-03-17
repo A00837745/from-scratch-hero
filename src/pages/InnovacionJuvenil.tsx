@@ -124,7 +124,7 @@ const InnovacionJuvenil = () => {
         Para cambiar el video, modifica la importación `heroVideo` al inicio del archivo.
         Para ajustar la altura, cambia `h-[60vh]` (ej: h-[50vh], h-[70vh], h-screen).
       */}
-      <section className="relative w-full h-[80vh] overflow-hidden">
+      <section className="relative w-full h-screen overflow-hidden">
         <video
           src={heroVideo}
           autoPlay
