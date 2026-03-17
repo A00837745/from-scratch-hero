@@ -82,29 +82,30 @@ const infoBlocks = [
   {
     title: "TALLER PARA NIÑOS INVENTORES",
     subtitle: "Según varios autores, incluyendo premios nobel de economía, la mejor acción para aumentar el número de inventores a futuro es trabajando en las infancias.",
-    bgColor: "#C2FFFF",
+    overlayColor: "#C2FFFF",
+    titleColor: "#00bcd4",
     imageSrc: imagen1,
-    // objectPosition: controla qué parte de la imagen se muestra cuando se recorta.
-    // Valores útiles: "center" (default), "top", "bottom", "left", "right"
     objectPosition: "top",
   },
   {
     title: "TALLER PARA MUJERES INVENTORAS",
     subtitle: "La literatura dice que mostrar a las mujeres que pueden ser inventoras, es clave para que se motiven a serlo.",
-    bgColor: "#fffbc0",
+    overlayColor: "#e8c8f0",
+    titleColor: "#c060d0",
     imageSrc: imagen2,
-    horizontal: true,
   },
   {
     title: "TALLER PARA JOVENES INVENTORES",
     subtitle: "A nivel licenciatura es una edad perfecta para convencer a los jóvenes que están listos para inventar.",
-    bgColor: "#ceafe0",
+    overlayColor: "#f5d0a0",
+    titleColor: "#e08300",
     imageSrc: imagen3,
   },
   {
     title: "TALLER PARA ADULTOS INVENTORES",
     subtitle: "Árbol que nace torcido, puede enderezarse y volverse inventor. No hay edad para dar un giro en la vida y recuperar la creatividad y el ingenio.",
-    bgColor: "#ffcbe8",
+    overlayColor: "#f0c0d8",
+    titleColor: "#e06090",
     imageSrc: imagen4,
   },
 ];
@@ -143,7 +144,7 @@ const InnovacionJuvenil = () => {
       */}
       <section
         className="py-20 px-6 md:px-16 lg:px-24"
-        style={{ backgroundColor: "#e8e0f0" }}
+        style={{ backgroundColor: "#ddd5e8" }}
       >
         <h2
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-12 text-center"
@@ -185,7 +186,7 @@ const InnovacionJuvenil = () => {
       */}
       <section
         className="py-20 px-6 md:px-16 lg:px-24 w-full"
-        style={{ backgroundColor: "#f5f5f5" }}
+        style={{ backgroundColor: "#eae6f0" }}
       >
         <h2
           className="text-4xl sm:text-5xl md:text-6xl font-bold mb-12 text-center"
@@ -211,7 +212,7 @@ const InnovacionJuvenil = () => {
               <div
                 className="absolute inset-0"
                 style={{
-                  background: `linear-gradient(to top, ${block.bgColor}dd 0%, ${block.bgColor}88 40%, transparent 70%)`,
+                  background: `linear-gradient(to top, ${block.overlayColor}dd 0%, ${block.overlayColor}88 40%, transparent 70%)`,
                 }}
               />
               {/* Texto superpuesto */}
@@ -219,7 +220,7 @@ const InnovacionJuvenil = () => {
                 <h3 className="text-white font-black text-xl md:text-2xl mb-1 drop-shadow-lg">
                   Taller para
                 </h3>
-                <h3 className="font-black text-2xl md:text-3xl mb-3 drop-shadow-lg" style={{ color: block.bgColor }}>
+                <h3 className="font-black text-2xl md:text-3xl mb-3 drop-shadow-lg" style={{ color: block.titleColor }}>
                   {block.title.replace("TALLER PARA ", "").toLowerCase()}
                 </h3>
                 <p className="text-white text-sm md:text-base leading-relaxed max-w-md drop-shadow-md">
