@@ -144,7 +144,7 @@ const InnovacionJuvenil = () => {
       */}
       <section
         className="py-20 px-6 md:px-16 lg:px-24"
-        style={{ backgroundColor: "#e8e0f0" }}
+        style={{ backgroundColor: "#ddd5e8" }}
       >
         <h2
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-12 text-center"
