@@ -207,7 +207,7 @@ const InnovacionJuvenil = () => {
           {infoBlocks.map((block) => (
             <div
               key={block.title}
-              className="relative rounded-2xl overflow-hidden min-h-[300px] md:min-h-[380px] flex flex-col justify-between"
+              className="relative rounded-2xl overflow-hidden min-h-[340px] md:min-h-[420px] lg:min-h-[480px] flex flex-col justify-between"
             >
               {/* Imagen de fondo */}
               <img
