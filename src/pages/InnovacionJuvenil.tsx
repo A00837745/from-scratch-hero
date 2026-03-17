@@ -82,29 +82,30 @@ const infoBlocks = [
   {
     title: "TALLER PARA NIÑOS INVENTORES",
     subtitle: "Según varios autores, incluyendo premios nobel de economía, la mejor acción para aumentar el número de inventores a futuro es trabajando en las infancias.",
-    bgColor: "#C2FFFF",
+    overlayColor: "#0e6680",
+    titleColor: "#67e8f9",
     imageSrc: imagen1,
-    // objectPosition: controla qué parte de la imagen se muestra cuando se recorta.
-    // Valores útiles: "center" (default), "top", "bottom", "left", "right"
     objectPosition: "top",
   },
   {
     title: "TALLER PARA MUJERES INVENTORAS",
     subtitle: "La literatura dice que mostrar a las mujeres que pueden ser inventoras, es clave para que se motiven a serlo.",
-    bgColor: "#fffbc0",
+    overlayColor: "#717A10",
+    titleColor: "#FDEB74",
     imageSrc: imagen2,
-    horizontal: true,
   },
   {
     title: "TALLER PARA JOVENES INVENTORES",
     subtitle: "A nivel licenciatura es una edad perfecta para convencer a los jóvenes que están listos para inventar.",
-    bgColor: "#ceafe0",
+    overlayColor: "#5b2182",
+    titleColor: "#f0abfc",
     imageSrc: imagen3,
   },
   {
     title: "TALLER PARA ADULTOS INVENTORES",
     subtitle: "Árbol que nace torcido, puede enderezarse y volverse inventor. No hay edad para dar un giro en la vida y recuperar la creatividad y el ingenio.",
-    bgColor: "#ffcbe8",
+    overlayColor: "#861818",
+    titleColor: "#F9A8A8",
     imageSrc: imagen4,
   },
 ];
@@ -136,112 +137,111 @@ const InnovacionJuvenil = () => {
         <div className="absolute inset-0 bg-black/30" />
       </section>
 
-      {/* ─── TÍTULO + 3 TEXTOS ───
-        Sección propia con fondo pastel verde menta.
-        Para cambiar los 3 textos, edítalos directamente aquí.
-        Para cambiar el color de fondo, modifica el backgroundColor.
+      {/* ─── SECCIÓN: ¿QUÉ TALLERES HEMOS IMPLEMENTADO? ───
+        3 tarjetas con fondo de color y texto superpuesto.
+        Para cambiar colores, modifica bgColor en el array tallerCards.
+        Para cambiar textos, edita title y description.
       */}
       <section
         className="py-20 px-6 md:px-16 lg:px-24"
-        style={{ background: "linear-gradient(to right, #C2FFFF, #fff3c2, #ead5ff)" }}
+        style={{ backgroundColor: "#d4e8dc" }}
       >
-        <div className="flex justify-center mb-16">
-        <div className="text-center py-8 px-20 rounded-2xl" style={{ backgroundColor: "#C2FFFF" }}>
-          <h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
-          >
-            ¿PORQUÉ NACIÓ ESTE TALLER?
-          </h1>
-          <div
-            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full mb-4"
-          />
-          <p className="text-xl md:text-2xl font-semibold mt-2" style={{ color: "#0047ca" }}>
-            PORQUE NO EXISTE UN PROGRAMA OFICIAL DE FORMACIÓN DE INVENTORAS E INVENTORES
-          </p>
-        </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-40 max-w-8xl mx-auto">
-          {/* Columna 1 — edita el texto directamente aquí */}
-          <div className="text-center text-xl md:text-2xl leading-relaxed space-y-4">
-            <p>En muchas escuelas de México, América Latina y el Caribe, existen pocas actividades que enseñen a las niñas y niños a pensar como inventores: a observar problemas, buscar soluciones y atreverse a crear algo nuevo.</p>
-            <p>Esto, a pesar de que estas habilidades pueden cambiar su futuro y el de los países.</p>
-          </div>
-          {/* Columna 2 — edita el texto directamente aquí */}
-          <div className="text-center text-xl md:text-2xl leading-relaxed space-y-4">
-            <p>Países desarrollados tienen más inventoras e inventores y más patentes por muchas razones. Una de ellas es que desde pequeños escuchan que ellos pueden crear o inventar algo que cambie su vida o la de los demás.</p>
-            <p>Por ejemplo, como dijo el economista Alfred Marshall, "los jóvenes norteamericanos capaces saben que podrían volverse inventores, o pasar de ser barberos a capitanes de guerra, tal como sucedió con los florentinos en la edad media”, es decir, que podían soñar en grande.</p>
-          </div>
-          {/* Columna 3 — edita el texto directamente aquí */}
-          <div className="text-center text-xl md:text-2xl leading-relaxed space-y-4">
-            <p>Nuestros jóvenes, niñas y niños también merecen creer en sus sueños. Y esa confianza empieza en la infancia, en la escuela y en la familia. Este taller busca despertar esa chispa.</p>
-            <p>El taller también se enfoca en jóvenes universitarios, porque en esa etapa toman decisiones que determinan su futuro profesional.</p>
-            <p>Creamos otro taller para adultos, el cual busca sensibilizarlos y hacerles recordar que sigue dentro de ellos una niña o un niño con creatividad, curiosidad y capacidad de inventar soluciones. Esto pretende que les despierte el interés por formar niñas o niños inventores en su círculo cercano, por ejemplo, hijas o hijos.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 4 CONTENEDORES GRANDES (GRID 2x2) ───
-        Abarcan todo el ancho de la página.
-        Cada contenedor tiene color de fondo, título y subtítulo.
-        Para agregar imágenes u otro contenido, edita el bloque correspondiente.
-      */}
-      <section 
-        className="flex flex-col py-20 px-6 md:px-16 lg:px-24 w-full"
-        style={{ backgroundColor: "#E0FFFF" }}
-      >
-        {/* ─── TÍTULO DE LA SECCIÓN DE FOTOS — mismo formato, sin contenedor */}
         <div className="text-center mb-16">
           <h2
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
           >
-            TALLERES QUE IMPLEMENTAMOS
+            ¿QUÉ TALLERES HEMOS<br/>IMPLEMENTADO?
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full" />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
-        {infoBlocks.map((block) => (
           <div
-            key={block.title}
-            className="min-h-[320px] md:min-h-[420px] flex flex-col items-center justify-start px-8 pt-10 pb-10 text-center rounded-2xl"
-            style={{ backgroundColor: block.bgColor }}
-          >
-            <h2
-              className="font-black text-3xl md:text-4xl tracking-wide mb-3"
-              style={{ color: "#0047ca" }}
-            >
-              {block.title}
-            </h2>
-            <p className="text-muted-foreground text-xl md:text-2xl max-w-auto leading-relaxed mb-6">
-              {block.subtitle}
+            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"
+          />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {/* Card 1 — EL PANORAMA */}
+          <div className="rounded-2xl p-8 flex flex-col justify-start" style={{ backgroundColor: "#6b9eb2" }}>
+            <h3 className="text-white font-black text-3xl md:text-4xl tracking-wide mb-4">EL PANORAMA</h3>
+            <p className="text-white text-xl md:text-2xl leading-relaxed">
+              En muchas escuelas de México, América Latina y el Caribe hay pocas actividades que enseñen a niñas y niños a pensar como inventores, es decir, a observar problemas, buscar soluciones y crear cosas nuevas, a pesar de que estas habilidades pueden transformar su futuro y el de sus países.
             </p>
-            {/*
-              ─── IMAGEN DEL BLOQUE ───
-              Para hacer la imagen MÁS GRANDE:
-                - Imágenes verticales: aumenta `max-h-80` → ej: max-h-96
-                - Imagen horizontal: aumenta `h-52` → ej: h-64, h-72
-                - Ambas: aumenta `max-w-sm` → ej: max-w-md, max-w-lg
-              Para hacer la imagen MÁS PEQUEÑA:
-                - Reduce los valores de alto correspondientes.
-              Las verticales usan `object-contain` para no distorsionarse ni dejar bordes blancos.
-              La horizontal usa `object-cover` con altura fija para llenar su espacio sin vacíos.
-              Para marcar un bloque como horizontal añade `horizontal: true` en su objeto de `infoBlocks`.
-            */}
-            {block.horizontal ? (
+          </div>
+          {/* Card 2 — INVENCIÓN */}
+          <div className="rounded-2xl p-8 flex flex-col justify-start" style={{ backgroundColor: "#D9D077" }}>
+            <h3 className="font-black text-3xl md:text-4xl tracking-wide mb-4" style={{ color: "#4a4a4a" }}>INVENCIÓN</h3>
+            <p className=" text-xl md:text-2xl leading-relaxed" style={{ color: "#4a4a4a" }}>
+              En los países desarrollados hay más inventores y patentes, en parte porque desde pequeños se les hace creer que pueden crear algo que cambie su vida o la de otros. Por ello, es importante que nuestras niñas, niños y jóvenes también desarrollen esa confianza desde la infancia, en la escuela y la familia.
+            </p>
+          </div>
+          {/* Card 3 — FORMACIÓN */}
+          <div className="rounded-2xl p-8 flex flex-col justify-start" style={{ backgroundColor: "#7c6898" }}>
+            <h3 className="text-white font-black text-3xl md:text-4xl tracking-wide mb-4">FORMACIÓN</h3>
+            <p className="text-white text-xl md:text-2xl leading-relaxed">
+              Nuestros talleres buscan despertar esa chispa creativa, además de involucrar a jóvenes universitarios quienes están definiendo su futuro profesional y a adultos, para que reconecten con su creatividad y se motiven a impulsar el espíritu inventor en las niñas y niños de su entorno.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SECCIÓN: NUESTROS TALLERES ───
+        4 tarjetas con imagen de fondo y texto superpuesto.
+        Para cambiar las imágenes, modifica imageSrc en infoBlocks.
+        Para cambiar los textos, edita title y subtitle.
+        Para cambiar colores del degradado, modifica los valores de gradiente.
+      */}
+      <section
+        className="py-20 px-6 md:px-16 lg:px-24 w-full"
+        style={{ backgroundColor: "#c8e4f0" }}
+      >
+        <div className="text-center mb-16">
+          <h2
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
+          >
+            NUESTROS TALLERES
+          </h2>
+          <div
+            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"
+          />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+          {infoBlocks.map((block) => (
+            <div
+              key={block.title}
+              className="relative rounded-2xl overflow-hidden min-h-[300px] md:min-h-[380px] flex flex-col justify-between"
+            >
+              {/* Imagen de fondo */}
               <img
                 src={block.imageSrc}
                 alt={block.title}
-                className="w-full max-w-md h-96 object-cover object-center rounded-2xl mt-auto mb-auto"
-              />
-            ) : (
-              <img
-                src={block.imageSrc}
-                alt={block.title}
-                className="w-full max-w-sm max-h-96 object-cover rounded-2xl"
+                className="absolute inset-0 w-full h-full object-cover"
                 style={{ objectPosition: block.objectPosition ?? "center" }}
               />
-            )}
-          </div>
-        ))}
+              {/* Overlay con color difuminado único por tarjeta */}
+              <div
+                className="absolute inset-0"
+                style={{
+                  background: `${block.overlayColor}40`,
+                }}
+              />
+              {/* Título arriba */}
+              <div className="relative z-10 p-6 md:p-8 flex flex-col justify-between h-full">
+                <div>
+                  <h3 className="text-white font-black text-2xl md:text-3xl mb-1 drop-shadow-lg">
+                    Taller para
+                  </h3>
+                  <h3 className="font-black text-2xl md:text-3xl drop-shadow-lg" style={{ color: block.titleColor }}>
+                    {block.title.replace("TALLER PARA ", "").toLowerCase()}
+                  </h3>
+                </div>
+              </div>
+              {/* Subtítulo abajo con recuadro negro semitransparente */}
+              <div className="relative z-10 px-6 py-4 md:px-8 md:py-5 rounded-2xl min-h-[120px] flex items-center" style={{ backgroundColor: "rgba(0,0,0,0.55)" }}>
+                <p className="text-white text-lg md:text-xl leading-relaxed">
+                  {block.subtitle}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
