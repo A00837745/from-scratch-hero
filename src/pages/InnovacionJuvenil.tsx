@@ -249,7 +249,7 @@ const InnovacionJuvenil = () => {
         El título ahora está dentro de la sección con fondo azul.
       */}
       <section
-        className="py-20 px-6 md:px-16 lg:px-24 w-full"
+        className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20 w-full"
         style={{ backgroundColor: "#C2FFFF" }}
       >
         {/* ─── TÍTULO DE LA SECCIÓN DE VIDEOS ─── */}
