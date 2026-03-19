@@ -55,7 +55,7 @@ import imagen4 from "@/assets/invento-adultos.jpg";
 const videoCards = [
   {
     videoSrc: video1,
-    title: "TALLER PARA NIÑOS INVENTORES",
+    title: "TALLER PARA NIÑAS Y NIÑOS INVENTORES",
     gradientColors: "#01f0f0, #0047ca",
     description: "Invento para extraer agua de un pozo y salvar la vida de una comunidad.",
   },
@@ -67,7 +67,7 @@ const videoCards = [
   },
   {
     videoSrc: video3,
-    title: "TALLER PARA JOVENES INVENTORES",
+    title: "TALLER PARA JOVENES INVENTORAS E INVENTORES",
     gradientColors: "#E000CD, #4c00ff",
     description: "Invento para calentar agua con materiales reciclables para que la gente viviendo en zonas de pobreza, sin gas, se puedan bañar.",
   }
@@ -80,7 +80,7 @@ const videoCards = [
  */
 const infoBlocks = [
   {
-    title: "TALLER PARA NIÑOS INVENTORES",
+    title: "TALLER PARA NIÑAS Y NIÑOS INVENTORES",
     subtitle: "Según varios autores, incluyendo premios nobel de economía, la mejor acción para aumentar el número de inventores a futuro es trabajando en las infancias.",
     overlayColor: "#0e6680",
     titleColor: "#67e8f9",
@@ -95,7 +95,7 @@ const infoBlocks = [
     imageSrc: imagen2,
   },
   {
-    title: "TALLER PARA JOVENES INVENTORES",
+    title: "TALLER PARA JOVENES INVENTORAS E INVENTORES",
     subtitle: "A nivel licenciatura es una edad perfecta para convencer a los jóvenes que están listos para inventar.",
     overlayColor: "#5b2182",
     titleColor: "#f0abfc",
@@ -146,16 +146,16 @@ const InnovacionJuvenil = () => {
         className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20"
         style={{ backgroundColor: "#d4e8dc" }}
       >
-        <div className="text-center mb-36">
+        <div className="text-center mb-44">
           <h2
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
           >
             ¿PORQUÉ NACIÓ ESTE TALLER?
           </h2>
           <div
             className="w-24 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"
           />
-           <p className="text-4xl md:text-5xl font-semibold mt-12" style={{ color: "#00A8CA" }}>
+           <p className="text-5xl md:text-6xl font-semibold mt-12" style={{ color: "#00A8CA" }}>
             PORQUE NO EXISTE UN PROGRAMA OFICIAL DE FORMACIÓN DE INVENTORAS E INVENTORES
           </p>
         </div>
@@ -164,21 +164,21 @@ const InnovacionJuvenil = () => {
           {/* Card 1 — EL PANORAMA */}
           <div className="rounded-2xl pt-20 pb-20 px-20 flex flex-col justify-start" style={{ backgroundColor: "#6b9eb2" }}>
             <h3 className="text-white font-black text-5xl md:text-6xl tracking-wide mb-8">PANORAMA</h3>
-            <p className="text-white text-2xl md:text-4xl leading-relaxed text-justify">
+            <p className="text-white text-3xl md:text-5xl leading-relaxed text-justify">
               En muchas escuelas de México, América Latina y el Caribe hay pocas actividades que enseñen a niñas y niños a pensar como inventores, es decir, a observar problemas, buscar soluciones y crear cosas nuevas, a pesar de que estas habilidades pueden transformar su futuro y el de sus países.
             </p>
           </div>
           {/* Card 2 — INVENCIÓN */}
           <div className="rounded-2xl pt-20 pb-20 px-20 flex flex-col justify-start" style={{ backgroundColor: "#D9D077" }}>
             <h3 className="font-black text-5xl md:text-6xl tracking-wide mb-8" style={{ color: "#4a4a4a" }}>INVENCIÓN</h3>
-            <p className=" text-2xl md:text-4xl leading-relaxed text-justify" style={{ color: "#4a4a4a" }}>
+            <p className=" text-3xl md:text-5xl leading-relaxed text-justify" style={{ color: "#4a4a4a" }}>
               En los países desarrollados hay más inventores y patentes, en parte porque desde pequeños se les hace creer que pueden crear algo que cambie su vida o la de otros. Por ello, es importante que nuestras niñas, niños y jóvenes también desarrollen esa confianza desde la infancia, en la escuela y la familia.
             </p>
           </div>
           {/* Card 3 — FORMACIÓN */}
           <div className="rounded-2xl pt-20 pb-20 px-20 flex flex-col justify-start" style={{ backgroundColor: "#7c6898" }}>
             <h3 className="text-white font-black text-5xl md:text-6xl tracking-wide mb-8">FORMACIÓN</h3>
-            <p className="text-white text-2xl md:text-4xl leading-relaxed text-justify">
+            <p className="text-white text-3xl md:text-5xl leading-relaxed text-justify">
               Nuestros talleres buscan despertar esa chispa creativa, además de involucrar a jóvenes universitarios quienes están definiendo su futuro profesional y a adultos, para que reconecten con su creatividad y se motiven a impulsar el espíritu inventor en las niñas y niños de su entorno.
             </p>
           </div>
@@ -192,12 +192,12 @@ const InnovacionJuvenil = () => {
         Para cambiar colores del degradado, modifica los valores de gradiente.
       */}
       <section
-        className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20 w-full"
+        className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20"
         style={{ backgroundColor: "#c8e4f0" }}
       >
-        <div className="text-center mb-20">
+        <div className="text-center mb-40">
           <h2
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
           >
             TALLERES QUE IMPLEMENTAMOS
           </h2>
@@ -206,7 +206,7 @@ const InnovacionJuvenil = () => {
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-24 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-24 max-w-auto mx-auto">
           {infoBlocks.map((block) => (
             <div
               key={block.title}
@@ -229,17 +229,17 @@ const InnovacionJuvenil = () => {
               {/* Título arriba */}
               <div className="relative z-10 p-6 md:p-8 flex flex-col justify-between h-full">
                 <div>
-                  <h3 className="text-white font-black text-2xl md:text-3xl mb-1 drop-shadow-lg">
+                  <h3 className="text-white font-black text-3xl md:text-4xl mb-1 drop-shadow-lg">
                     Taller para
                   </h3>
-                  <h3 className="font-black text-2xl md:text-3xl drop-shadow-lg" style={{ color: block.titleColor }}>
+                  <h3 className="font-black text-3xl md:text-4xl drop-shadow-lg" style={{ color: block.titleColor }}>
                     {block.title.replace("TALLER PARA ", "").toLowerCase()}
                   </h3>
                 </div>
               </div>
               {/* Subtítulo abajo con recuadro negro semitransparente */}
-              <div className="relative z-10 px-6 py-4 md:px-8 md:py-5 rounded-2xl min-h-[120px] flex items-center" style={{ backgroundColor: "rgba(0,0,0,0.55)" }}>
-                <p className="text-white text-lg md:text-xl leading-relaxed text-justify">
+              <div className="relative z-10 px-6 py-4 md:px-8 md:py-5 rounded-2xl min-h-[180px] flex items-center" style={{ backgroundColor: "rgba(0,0,0,0.55)" }}>
+                <p className="text-white text-2xl md:text-3xl leading-relaxed text-justify">
                   {block.subtitle}
                 </p>
               </div>
@@ -252,13 +252,13 @@ const InnovacionJuvenil = () => {
         El título ahora está dentro de la sección con fondo azul.
       */}
       <section
-        className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20 w-full"
+        className="min-h-screen flex flex-col justify-center px-6 md:px-16 lg:px-24 py-20"
         style={{ backgroundColor: "#C2FFFF" }}
       >
         {/* ─── TÍTULO DE LA SECCIÓN DE VIDEOS ─── */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <h2
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold bg-gradient-to-r from-blue-800 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-4"
           >
             AHORA SABEN QUE SON INVENTORAS E INVENTORES
           </h2>
@@ -269,7 +269,7 @@ const InnovacionJuvenil = () => {
         {/*
           ─── TAMAÑO DE LAS TARJETAS DE VIDEO ───
         */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 max-w-[1600px] mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-36 max-w-[2400px] mx-auto items-start">
           {videoCards.map((card) => (
             <VideoCard
               key={card.title}
